@@ -38,5 +38,76 @@ When we are stuck and our team is unable to help each other we will concisely su
 
 We have acknowledged that approaching team members is not considered interrupting. 
 
+# User Stories 
+
+As a user I want to login to an account 
+
+As a user I want to see the categories when logged in  
+
+As a user I want to register an Account 
+
+As a user I remove my Account  
+
+As a user I want to logout my account	 
+
+As a user change my account name 
+
+As a user change my account password 
+
+As a user I want to be able to search for anything from my account 
+
+As a user I want to search bar to recommend similar thing that I'm search for  
+
+As a user I want view the results that I search for  
+
+As a user I want to be able to search for titles  
+
+As a user I want to be able to add what I search for  
+
+As a user I want to be able to add films 
+
+As a user I want to be able to add music 
+
+As a user I want to be able to add books 
+
+As a user I want to see the date of the items on when I added it to my list 
+
+As a user I want to see a profile page on my account 
+
+As a user I want to be able to see categories on my profile 
+
+As a user I want to be able to see film  
+
+As a user I want to be able to see music 
+
+As a user I want to be able to see books 
+
+As a user I want to remove my items from my list  
+
+As a user I want like to move media from one list to another 
+
+As a user I want to be able to add recommend media  
+
+As a user I want to be able to remove recommend media 
+
+As a system I want my app to be responsive  
+
+As a user I want be able to see the app on my mobile phone 
+
+As a user I want to be able to see the app on my pc 
+
+As a system I want to use an external API for my app 
+
+As a system I want to be able to interact with a DB 
+
+As a system I want to add items from list a DB  
+
+As a system I want to remove items from list a DB 
+
+As a system I want to update items from list in a DB 
+
+As a system I want a DB that holds the user's account /name/id 
+
+ 
 
 
