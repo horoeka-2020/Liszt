@@ -54,7 +54,7 @@ Tai: Needs team mates to offer help, and prompts to take a break.
 Tom: Needs regular communication where each team member is at. Appreciates check ins on stress.
 
 ### Conflict management:
-the team is a democracy. Decisions are made by concensus.
+The team is a democracy. Decisions are made by concensus.
 
 When conflict arises, every member will acknowledge it.
 
