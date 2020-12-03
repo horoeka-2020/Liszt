@@ -99,4 +99,4 @@ Apply themed styling
 Delete account
 
 ### Database Diagram
-<iframe width="560" height="315" src='https://dbdiagram.io/embed/5fc85c253a78976d7b7e4e0e'> </iframe>
+https://dbdiagram.io/d/5fc85c253a78976d7b7e4e0e
