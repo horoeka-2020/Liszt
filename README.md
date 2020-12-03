@@ -107,11 +107,19 @@ We have acknowledged that approaching team members is not considered interruptin
 
 # Stretch
 Category list to have two categories, one for 'have watched', one for 'to watch'
+
 Ability to move items between 'have watched' and 'to watch'
+
 Add notes to items on list
+
 'Date added' visible for each item on list
+
 Pin categories to profile page
+
 Category button displays images of items in list
+
 Items in list decend by order of relevancy
+
 Apply themed styling
+
 Delete account
