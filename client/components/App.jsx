@@ -8,16 +8,16 @@ export class App extends React.Component {
     fruits: []
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.dispatch(fetchFruits())
   }
 
-  render () {
+  render() {
     return (
       <div className='app'>
         <h1>Fullstack Boilerplate - with Fruits!</h1>
         <ul>
-          {this.props.fruits.map(fruit => (
+          {this.props.fruits.map((fruit) => (
             <li key={fruit}>{fruit}</li>
           ))}
         </ul>
@@ -26,7 +26,7 @@ export class App extends React.Component {
   }
 }
 
-function mapStateToProps (globalState) {
+function mapStateToProps(globalState) {
   return {
     fruits: globalState.fruits
   }
