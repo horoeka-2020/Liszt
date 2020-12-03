@@ -1,16 +1,19 @@
+import { Book } from '@material-ui/icons'
 import React from 'react'
 
-export class BookDetail extends React.Component {
+const BookDetail = (props) => {
+ const book = props.book
 
-
-  render() {
     return (
       <div>
-    
+        <img src={book.image_url}></img>
+    <p>{book.title}</p>
+    <p>{book.author}</p>
+    <p>{book.description}</p>
+    <p>{book.published_date}</p>
       </div>
     )
   }
-}
 
 
 export default BookDetail

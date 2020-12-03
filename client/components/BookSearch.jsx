@@ -1,15 +1,14 @@
 import React from 'react'
 
 import SearchBar from './SearchBar'
-import MaterializeCarousel from './MaterializeCarousel'
-export class Books extends React.Component {
+
+export class BookSearch extends React.Component {
 
 
   render() {
     return (
       <div>
         <SearchBar/>
-        <MaterializeCarousel/>
         
       </div>
     )
@@ -17,4 +16,4 @@ export class Books extends React.Component {
 }
 
 
-export default Books
+export default BookSearch
