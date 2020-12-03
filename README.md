@@ -4,61 +4,23 @@ Tai, Tom, Crystal, Kenneth, Al
 ## Lizst is a personal media journal, where you can search for your favourite films, music, and books to add to your recommendation list.
 
 # User Stories
-As a user I want to login to an account 
+As a user, I want to register for an account
 
-As a user I want to see the categories when logged in  
+As a user, I want to login to my account 
 
-As a user I want to register an Account 
+As a user, I want to see media categories on my profile page  
 
-As a user I remove my Account  
+As a user, I want to be able to search for items in each category
 
-As a user I want to logout my account	 
+As a user, I want view the results when I search a title
 
-As a user change my account name 
-
-As a user change my account password 
-
-As a user I want to be able to search for anything from my account 
-
-As a user I want to search bar to recommend similar thing that I'm search for  
-
-As a user I want view the results that I search for  
-
-As a user I want to be able to search for titles  
-
-As a user I want to be able to add what I search for  
-
-As a user I want to be able to add films 
-
-As a user I want to be able to add music 
-
-As a user I want to be able to add books 
-
-As a user I want to see the date of the items on when I added it to my list 
-
-As a user I want to see a profile page on my account 
-
-As a user I want to be able to see categories on my profile 
-
-As a user I want to be able to see film  
-
-As a user I want to be able to see music 
-
-As a user I want to be able to see books 
+As a user, I want to be able to add an item from my search to my list 
 
 As a user I want to remove my items from my list  
 
-As a user I want like to move media from one list to another 
+As a user, I would like to use the app on my mobile device
 
-As a user I want to be able to add recommend media  
-
-As a user I want to be able to remove recommend media 
-
-As a system I want my app to be responsive  
-
-As a user I want be able to see the app on my mobile phone 
-
-As a user I want to be able to see the app on my pc 
+### Developer Stories
 
 As a system I want to use an external API for my app 
 
