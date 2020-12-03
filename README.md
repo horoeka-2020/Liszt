@@ -3,7 +3,7 @@ Tai, Tom, Crystal, Kenneth, Al
 
 ## Lizst is a personal media journal, where you can search for your favourite films, music, and books to add to your recommendation list.
 
-# User Stories
+## User Stories
 As a user, I want to register for an account
 
 As a user, I want to login to my account 
@@ -79,7 +79,7 @@ When we are stuck and our team is unable to help each other we will concisely su
 
 We have acknowledged that approaching team members is not considered interrupting. 
 
-# Stretch
+## Stretch
 Category list to have two categories, one for 'have watched', one for 'to watch'
 
 Ability to move items between 'have watched' and 'to watch'
