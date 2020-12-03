@@ -97,3 +97,6 @@ Items in list decend by order of relevancy
 Apply themed styling
 
 Delete account
+
+### Database Diagram
+<iframe width="560" height="315" src='https://dbdiagram.io/embed/5fc85c253a78976d7b7e4e0e'> </iframe>
