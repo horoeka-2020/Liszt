@@ -1,4 +1,7 @@
 import React from 'react'
+import Button from '@material-ui/core/Button'
+
+import BookSearch from './BookSearch'
 
 export class SearchBar extends React.Component {
 
@@ -10,7 +13,8 @@ export class SearchBar extends React.Component {
       placeholder="categories"/>
       {/*  onChange={this.handleChange}/> */}
 
-    <button>Search</button>
+    <Button variant="contained"size="large">Search</Button>
+    <BookSearch/>
   
       {/* // onClick={() => this.props.dispatch(fetchPosts(`${this.state.category}`))}>Search</button> */}
   </div>
