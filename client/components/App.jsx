@@ -4,15 +4,17 @@ import Header from './Header'
 import Home from './Home'
 import SignIn from './Signin'
 import BooksApi from './BooksApi'
+import BookList from './BookList'
 
 export class App extends React.Component {
   render() {
     return (
       <div className='app'>
         <Header path='/' />
-        <Route exact path='/signin' component={SignIn} />
-        <Route exact path='/searchbookapi' component={BooksApi} />
+        <Route exact path='/' component={SignIn} />
+        <Route exact path='/booksearch' component={BooksApi} />
         <Route exact path='/home' component={Home} />
+        <Route exact path='/booklist' component={BookList} />
       </div>
     )
   }
