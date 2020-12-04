@@ -101,3 +101,25 @@ Delete account
 ### Database Diagram
 ![Entity Relationship Diagram](docs/erd.png)
 [Liszt ERD on dbdiagram.io](https://dbdiagram.io/d/5fc98d333a78976d7b7e743b)
+
+### Git Policy
+How to merge (e.g. Feature branch to front-end)
+1. On feature-branch, git pull origin front-end
+2. If conflicts, deal with them.
+3. Commit and push if you've needed to make changes.
+4. git checkout front-end
+5. git merge feature-branch
+6. Once that's successful, git push origin front-end
+
+#### Feature branches
+- Roughly aligns to a ticket being worked on solo, or by a pair
+- Need to be code reviewed before getting merged into front-end or back-end.
+
+#### front-end, back-end, 
+Feature branches get merged into here. The idea of these branches is that if front-end code is working and needs to go to dev and main, it isn't blocked by some back-end changes that aren't working. Or vice versa
+
+#### dev
+We really don't want this one broken, but it's better here than in Main.
+
+#### main
+Only integrated, working code can go in here. Don't want it broken.
