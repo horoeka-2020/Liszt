@@ -14,6 +14,11 @@ export default function BooksApi() {
 
     setBook(book)
   }
+  //ISBN:
+  //https://www.googleapis.com/books/v1/volumes?q=isbn:9781448823734&maxResults=1
+
+  //ID:
+  //https://www.googleapis.com/books/v1/volumes?q=id:gx4O4kpbCd8C&maxResults=1
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -25,6 +30,10 @@ export default function BooksApi() {
       .then((data) => {
         setResult(data.data.items)
         console.log(data.data.items)
+      })
+      .catch((err) => {
+        // Handle Error Here
+        console.error(err)
       })
   }
 
@@ -46,7 +55,11 @@ export default function BooksApi() {
       <div>
         {result.map((book) => (
           <img
-            src={book.volumeInfo.imageLinks.thumbnail}
+            src={
+              book.volumeInfo.imageLinks === undefined
+                ? ''
+                : `${book.volumeInfo.imageLinks.thumbnail}`
+            }
             alt={book.title}
             key={book.id}
           />

@@ -342,13 +342,20 @@ function BooksApi() {
   function handleChange(e) {
     var book = e.target.value;
     setBook(book);
-  }
+  } //ISBN:
+  //https://www.googleapis.com/books/v1/volumes?q=isbn:9781448823734&maxResults=1
+  //ID:
+  //https://www.googleapis.com/books/v1/volumes?q=id:gx4O4kpbCd8C&maxResults=1
+
 
   function handleSubmit(e) {
     e.preventDefault();
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://www.googleapis.com/books/v1/volumes?q=".concat(book, "&key=").concat(apiKey, "&maxResults=20")).then(function (data) {
       setResult(data.data.items);
       console.log(data.data.items);
+    })["catch"](function (err) {
+      // Handle Error Here
+      console.error(err);
     });
   }
 
@@ -365,7 +372,7 @@ function BooksApi() {
     className: ""
   }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, result.map(function (book) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: book.volumeInfo.imageLinks.thumbnail,
+      src: book.volumeInfo.imageLinks === undefined ? '' : "".concat(book.volumeInfo.imageLinks.thumbnail),
       alt: book.title,
       key: book.id
     });
