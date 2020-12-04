@@ -6,12 +6,17 @@ exports.seed = function (knex) {
       return knex('users').insert([
         {
           id: 1,
-          full_name: 'Kenneth Cruz',
+          user_name: 'Kenneth Cruz',
           hash: 'pass'
         },
         {
           id: 2,
-          full_name: 'Tom Griffin',
+          user_name: 'Tom Griffin',
+          hash: 'pass'
+        },
+        {
+          id: 3,
+          user_name: 'Tai Hona',
           hash: 'pass'
         }
       ])
