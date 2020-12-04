@@ -31,6 +31,10 @@ export default function BooksApi() {
         setResult(data.data.items)
         console.log(data.data.items)
       })
+      .catch((err) => {
+        // Handle Error Here
+        console.error(err)
+      })
   }
 
   return (
@@ -51,7 +55,11 @@ export default function BooksApi() {
       <div>
         {result.map((book) => (
           <img
-            src={book.volumeInfo.imageLinks.thumbnail}
+            src={
+              book.volumeInfo.imageLinks === undefined
+                ? ''
+                : `${book.volumeInfo.imageLinks.thumbnail}`
+            }
             alt={book.title}
             key={book.id}
           />

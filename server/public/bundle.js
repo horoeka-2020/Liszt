@@ -406,6 +406,9 @@ function BooksApi() {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://www.googleapis.com/books/v1/volumes?q=".concat(book, "&key=").concat(apiKey, "&maxResults=20")).then(function (data) {
       setResult(data.data.items);
       console.log(data.data.items);
+    })["catch"](function (err) {
+      // Handle Error Here
+      console.error(err);
     });
   }
 
@@ -422,7 +425,7 @@ function BooksApi() {
     className: ""
   }, "Submit")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, result.map(function (book) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: book.volumeInfo.imageLinks.thumbnail,
+      src: book.volumeInfo.imageLinks === undefined ? '' : "".concat(book.volumeInfo.imageLinks.thumbnail),
       alt: book.title,
       key: book.id
     });
@@ -545,7 +548,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Header() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
-    "class": "container"
+    className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
     className: "header"
   }, "LISZT"));
