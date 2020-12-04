@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SearchBar from './SearchBar'
-import BookDetail from './BookDetail'
+import Carousel from './Carousel'
 
 export class Books extends React.Component {
 
@@ -10,7 +10,8 @@ export class Books extends React.Component {
     return (
       <div>
         <SearchBar/>
-        ca
+        <Carousel/>
+        
       </div>
     )
   }

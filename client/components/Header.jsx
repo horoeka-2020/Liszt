@@ -2,12 +2,9 @@ import React from 'react'
 
 function Header () {
   return (
-    <>
-      <div>
-        <h1>Liszt</h1>
-      </div>
-
-    </>
+      <header class="container">
+        <h1 className="header">LISZT</h1>
+      </header>
   )
 }
 
