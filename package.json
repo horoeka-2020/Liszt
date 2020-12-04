@@ -45,10 +45,11 @@
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.0",
     "bulma": "^0.9.1",
     "express": "^4.17.1",
     "knex": "^0.21.12",
-    "materialize-css": "^1.0.0-rc.2",
+    "materialize-css": "^1.0.0",
     "pg": "^8.5.1",
     "superagent": "^6.1.0"
   },
