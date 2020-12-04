@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SearchBar from './SearchBar'
-import MaterializeCarousel from './MaterializeCarousel'
+import MaterializeCarousel from './Carousel'
 
 export class Books extends React.Component {
 

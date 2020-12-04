@@ -11,8 +11,8 @@ export class App extends React.Component {
   render() {
     return (
       <div className='app'>
-        {/* <SignIn/> */}
         <Header/>
+        <SignIn/>
       <Home/>
       </div>
     )
