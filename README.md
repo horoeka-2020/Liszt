@@ -99,4 +99,5 @@ Apply themed styling
 Delete account
 
 ### Database Diagram
-[Gardenz ERD on dbdiagram.io](https://dbdiagram.io/d/5fc85c253a78976d7b7e4e0e)
+![Entity Relationship Diagram](docs/erd.png)
+[Liszt ERD on dbdiagram.io](https://dbdiagram.io/d/5fc98d333a78976d7b7e743b)
