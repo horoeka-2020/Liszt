@@ -100,4 +100,4 @@ Delete account
 
 ### Database Diagram
 ![Entity Relationship Diagram](docs/erd.png)
-[Gardenz ERD on dbdiagram.io](https://dbdiagram.io/d/5fc98d333a78976d7b7e743b)
+[Liszt ERD on dbdiagram.io](https://dbdiagram.io/d/5fc98d333a78976d7b7e743b)
