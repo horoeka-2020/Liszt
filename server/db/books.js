@@ -3,7 +3,8 @@ const connection = require('./connection')
 module.exports = {
   getUserBooksList,
   getBooktById,
-  addBooksToBookList
+  addBooksToBookList,
+  removeBooksFromBookList
 }
 // gets the books of the user
 function getUserBooksList (userId, db = connection) {
@@ -21,6 +22,16 @@ function addBooksToBookList (newBook, db = connection) {
       book_api_id: newBook.bookApiId,
       image_url: newBook.imageUrl
 
+    })
+}
+
+function removeBooksFromBookList (id, db = connection) {
+  return db('book_list')
+    .delete()
+    .where('id', id)
+    // eslint-disable-next-line promise/always-return
+    .then(count => {
+      console.log('Number of records deleted:', count)
     })
 }
 

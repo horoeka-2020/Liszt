@@ -39,9 +39,15 @@ test('addBooksToBookList  inserts new Book from Api(mocked)', () => {
 
   return db.addBooksToBookList(actual, testDb)
     .then(event => {
-      expect(event.userId).toBe(1)
-      expect(event.bookApiId).toBe('3-WEDwAAQBAJ')
-      expect(event.imageUrl).toBe('http://books.google.com/books/content?id=3-WEDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api')
+      expect(event).toHaveLength(1)
+      return null
+    })
+})
+
+test('removeBooksFromBookList remove book from database', () => {
+  return db.removeBooksFromBookList(1, testDb)
+    .then(book => {
+      expect(book).toBe()
       return null
     })
 })
