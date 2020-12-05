@@ -32,7 +32,6 @@ export default function BookApi(props) {
         props.history.push('/booklist/searchresults')
       })
       .catch((err) => {
-        // Handle Error Here
         console.error(err)
       })
   }

@@ -64,6 +64,7 @@ const BookDetail = ({
       image
     }
     console.log(newBook)
+
     // resetResults()
     history.push('/booklist')
   }

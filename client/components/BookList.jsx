@@ -14,8 +14,6 @@ const BookList = (props) => {
   return (
     <div>
       <BookApi setResult={setResult} history={props.history} />
-      {/* //only available on exact path of /booklist */}
-      {/* import searchresults component  only available on /booklist/result*/}
       <Route exact path='/booklist' component={Carousel} />
       <Route
         exact
