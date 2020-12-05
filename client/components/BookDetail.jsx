@@ -121,6 +121,6 @@ const BookDetail = ({
 //       <img src={image === undefined ? '' : `${image}`} alt={alt} key={key} />
 //     </div>
 //   )
-// }
+//  }
 
 export default BookDetail
