@@ -25,10 +25,11 @@ function addBooksToBookList (newBook, db = connection) {
     })
 }
 
-function removeBooksFromBookList (id, db = connection) {
+function removeBooksFromBookList (bookApiId, userId, db = connection) {
   return db('book_list')
     .delete()
-    .where('id', id)
+    .where('book_api_id', bookApiId)
+    .where('user_id', userId)
     // eslint-disable-next-line promise/always-return
     .then(count => {
       console.log('Number of records deleted:', count)
