@@ -49,7 +49,8 @@ const BookDetail = ({
   author,
   description,
   resetResults,
-  history
+  history,
+  isbn
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -61,7 +62,8 @@ const BookDetail = ({
   const handleAddBook = () => {
     const newBook = {
       key,
-      image
+      image,
+      isbn
     }
     console.log(newBook)
 
@@ -89,8 +91,8 @@ const BookDetail = ({
       />
 
       <CardActions disableSpacing>
-        <IconButton aria-label='add to list'>
-          <AddCircleIcon onClick={handleAddBook} />
+        <IconButton aria-label='add to list' onClick={handleAddBook}>
+          <AddCircleIcon />
         </IconButton>
 
         <IconButton
