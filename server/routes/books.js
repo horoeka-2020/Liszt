@@ -14,11 +14,11 @@ router.get('/:userId', (req, res) => {
     })
 })
 
-router.post('/:userId', (req, res) => {
+router.post('/', (req, res) => {
   const { userId, bookApiId, imageUrl } = req.body
   const newBook = { userId, bookApiId, imageUrl }
   db.addBooksToBookList(newBook)
-    .then(() => db.getUserBooksList(req.params.userId))
+    .then(() => db.getUserBooksList(userId))
     .then((books) => {
       res.json(books)
       return null
