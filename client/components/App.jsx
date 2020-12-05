@@ -3,16 +3,19 @@ import { Route } from 'react-router-dom'
 import Header from './Header'
 import Home from './Home'
 import SignIn from './Signin'
-import BooksApi from './BooksApi'
+import BookApi from './BookApi'
+import BookList from './BookList'
+import SearchResults from './SearchResults'
 
 export class App extends React.Component {
   render() {
     return (
       <div className='app'>
         <Header path='/' />
-        <Route exact path='/signin' component={SignIn} />
-        <Route exact path='/searchbookapi' component={BooksApi} />
+        <Route exact path='/' component={SignIn} />
+        <Route exact path='/booksearch' component={BookApi} />
         <Route exact path='/home' component={Home} />
+        <Route path='/booklist' component={BookList} />
       </div>
     )
   }
