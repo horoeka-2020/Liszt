@@ -102,7 +102,7 @@ Delete account
 ![Entity Relationship Diagram](docs/erd.png)
 [Liszt ERD on dbdiagram.io](https://dbdiagram.io/d/5fc98d333a78976d7b7e743b)
 
-### Git Policy
+## Git Policy
 How to merge (e.g. Feature branch to front-end)
 1. On feature-branch, git pull origin front-end
 2. If conflicts, deal with them.
@@ -123,3 +123,20 @@ We really don't want this one broken, but it's better here than in Main.
 
 #### main
 Only integrated, working code can go in here. Don't want it broken.
+
+## API Routes
+
+### `GET /api/v1/books/:userId`
+
+Response (200):
+
+```json
+{
+	"books": [
+		{
+			"bookApiId": "1bMXAAAAYAAJ",
+			"imageUrl": "http://books.google.com/books/content?id=1bMXAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+		}
+	]
+}
+```
