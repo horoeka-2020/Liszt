@@ -3,8 +3,9 @@ import { Route } from 'react-router-dom'
 import Header from './Header'
 import Home from './Home'
 import SignIn from './Signin'
-import BooksApi from './BooksApi'
+import BookApi from './BookApi'
 import BookList from './BookList'
+import SearchResults from './SearchResults'
 
 export class App extends React.Component {
   render() {
@@ -12,9 +13,9 @@ export class App extends React.Component {
       <div className='app'>
         <Header path='/' />
         <Route exact path='/' component={SignIn} />
-        <Route exact path='/booksearch' component={BooksApi} />
+        <Route exact path='/booksearch' component={BookApi} />
         <Route exact path='/home' component={Home} />
-        <Route exact path='/booklist' component={BookList} />
+        <Route path='/booklist' component={BookList} />
       </div>
     )
   }
