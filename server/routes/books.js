@@ -5,27 +5,27 @@ const db = require('../db/books')
 const router = express.Router()
 
 router.get('/:userId', (req, res) => {
-  db.getUserBookList(req.params.userId)
+  db.getUserBooksList(req.params.userId)
     .then(books => {
       return res.json({ books })
     })
     .catch(err => {
       res.status(500).json({ error: err.message })
     })
-})                                                                                                                                                                                                                                                                                                           
+})
 
 router.post('/:userId', (req, res) => {
-  const { user_id, book_api_id, image_url } = req.body
-  const newBook =  { user_id, book_api_id, image_url }
+  const { userId, bookApiId, imageUrl } = req.body
+  const newBook = { userId, bookApiId, imageUrl }
   db.addBooksToBookList(newBook)
-  .then(db.getUserBookList(req.params.userId))
-  .then((books) => {
-    res.json(books)
-    return null
-  })
-  .catch(err => {
-    res.status(500).json({ error: err.message })
-  })
+    .then(() => db.getUserBooksList(req.params.userId))
+    .then((books) => {
+      res.json(books)
+      return null
+    })
+    .catch(err => {
+      res.status(500).json({ error: err.message })
+    })
 })
 
 // router.get('/books/:userId/:id', (req, res) => {
