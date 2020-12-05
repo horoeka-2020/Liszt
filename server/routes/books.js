@@ -28,10 +28,10 @@ router.post('/', (req, res) => {
     })
 })
 
-router.delete('/:userId', (req, res) => {
+router.delete('/', (req, res) => {
   const { bookApiId, userId } = (req.body)
   db.removeBooksFromBookList(bookApiId, userId)
-    .then(() => db.getUserBooksList())
+    .then(() => db.getUserBooksList(userId))
     .then((books) => {
       res.json(books)
       return null
