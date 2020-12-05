@@ -135,6 +135,31 @@ Response (200):
 	"books": [
 		{
 			"bookApiId": "1bMXAAAAYAAJ",
+			"imageUrl": "http://books.google.com/books/content?id=1bMXAAAAYAAJ..."
+		}
+	]
+}
+```
+### `POST /api/v1/books/`
+
+Adds a book to the user's list of books.
+
+Request:
+
+
+```json
+{
+	"userId": 1,
+	"bookApiId": "1bMXAAAAYAAJ"  
+}
+```
+Response (200):
+
+```json
+{
+	"books": [
+		{
+			"bookApiId": "1bMXAAAAYAAJ",
 			"imageUrl": "http://books.google.com/books/content?id=1bMXAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
 		}
 	]
