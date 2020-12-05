@@ -1,10 +1,10 @@
 const express = require('express')
 
-const db = require('../db/book_list')
+const db = require('../db/books')
 
 const router = express.Router()
 
-router.get('/books/:userId', (req, res) => {
+router.get('/:userId', (req, res) => {
   db.getUserBookList(req.params.userId)
     .then(books => {
       return res.json({ books })
@@ -14,10 +14,11 @@ router.get('/books/:userId', (req, res) => {
     })
 })                                                                                                                                                                                                                                                                                                           
 
-router.post('/books/:userId', (req, res) => {
+router.post('/:userId', (req, res) => {
   const { user_id, book_api_id, image_url } = req.body
   const newBook =  { user_id, book_api_id, image_url }
   db.addBooksToBookList(newBook)
+  .then(db.getUserBookList(req.params.userId))
   .then((books) => {
     res.json(books)
     return null
