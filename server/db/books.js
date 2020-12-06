@@ -8,7 +8,7 @@ module.exports = {
 }
 // gets the books of the user
 function getUserBooksList (userId, db = connection) {
-  return db('book_list').where('user_id', userId).select('id', 'user_id as userId', 'book_api_id as bookApiId', 'image_url as imageUrl')
+  return db('book_list').where('user_id', userId).select('id', 'user_id as userId', 'title', 'book_api_id as bookApiId', 'image_url as imageUrl', 'author', 'description')
 }
 
 function getBooktById (id, db = connection) {
