@@ -18,7 +18,7 @@ import { red } from '@material-ui/core/colors'
 import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
-import postBookToList from '../apis/books'
+import { postBookToList } from '../apis/books'
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -1,9 +1,23 @@
 import React from 'react'
 import M from 'materialize-css'
 import 'materialize-css/dist/css/materialize.min.css'
+import CarouselImage from './CarouselImage'
+import { getBookList } from '../apis/books'
 
-export class Carousel extends React.Component {
-  componentDidMount() {
+export default class Carousel extends React.Component {
+  state = {
+    books: []
+  }
+
+  componentDidMount () {
+    getBookList(8)
+      .then(books =>
+        this.setState({
+          books: books
+        }))
+  }
+
+  fetchPhotos () {
     const options = {
       duration: 300,
       onCycleTo: () => {
@@ -13,11 +27,8 @@ export class Carousel extends React.Component {
     M.Carousel.init(this.Carousel, options)
   }
 
-  // fetchPhotos(){
-
-  // }
-
-  render() {
+  render () {
+    console.log('i am here', this.state.books)
     return (
       <div
         ref={(Carousel) => {
@@ -25,18 +36,9 @@ export class Carousel extends React.Component {
         }}
         className='carousel'
       >
-        <a className='carousel-item' href='#one!'>
-          <img src='https://lorempixel.com/250/250/nature/1' />
-        </a>
-        <a className='carousel-item' href='#two!'>
-          <img src='https://lorempixel.com/250/250/nature/2' />
-        </a>
-        <a className='carousel-item' href='#three!'>
-          <img src='https://lorempixel.com/250/250/nature/3' />
-        </a>
+        {this.state.books.map((book) => {
+        })}
       </div>
     )
   }
 }
-
-export default Carousel
