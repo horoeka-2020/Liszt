@@ -8,15 +8,21 @@ class Carousel extends React.Component {
   state = {
     books: []
   }
-  componentDidMount() {
+
+  componentDidMount () {
     getBookList(8).then((books) =>
       this.setState({
-        books: books
+        books: books.books
       })
     )
   }
-  render() {
-    return <div>{console.log(this.state.books.books)}</div>
+
+  render () {
+    return <div>{this.state.books.map((book) => {
+      return <CarouselImage
+        image={book.imageUrl}
+        key={book.bookApiId}/>
+    })}</div>
   }
 }
 
