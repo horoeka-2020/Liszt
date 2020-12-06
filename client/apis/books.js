@@ -16,15 +16,18 @@ export function getBookList (user) {
     })
 }
 
-export function postBookToList (userId, bookApiId, imageUrl) {
+export default function postBookToList (newBook) {
   // To be called when user clicks Add button on BookDetail.jsx
   // Sending book_api_id and user_id to serverside to add to user's booklist
-
+  console.log('nB', newBook)
+  const hardCodedUserId = 1
+  const { image, isbn } = newBook
   const bookDetails = {
-    userId: userId,
-    bookApiId: bookApiId,
-    imageUrl: imageUrl
+    userId: hardCodedUserId,
+    bookApiId: isbn,
+    imageUrl: image
   }
+  console.log('bookDetails', bookDetails)
   return request.post('/api/v1/books/')
     .send(bookDetails)
     .then((res) => {
