@@ -34,7 +34,10 @@ test('addBooksToBookList  inserts new Book from Api(mocked)', () => {
     id: 3,
     userId: 1,
     bookApiId: '3-WEDwAAQBAJ',
-    imageUrl: 'http://books.google.com/books/content?id=3-WEDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api'
+    title: 'The Adventures of Oliver Twist',
+    imageUrl: 'http://books.google.com/books/content?id=3-WEDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api',
+    author: 'Paula Johanson',
+    description: 'Chronicles the life of the pop music sensation, documenting her'
   }
 
   return db.addBooksToBookList(actual, testDb)
@@ -45,7 +48,7 @@ test('addBooksToBookList  inserts new Book from Api(mocked)', () => {
 })
 
 test('removeBooksFromBookList remove book from database', () => {
-  return db.removeBooksFromBookList(1, testDb)
+  return db.removeBooksFromBookList(1, 1, testDb)
     .then(book => {
       expect(book).toBe()
       return null
