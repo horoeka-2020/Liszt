@@ -4,7 +4,7 @@
 
 import request from 'superagent'
 
-export function getBookList (user) {
+export const getBookList = (user) => {
   // To be called by BookList.jsx so it can map books to render the Carousel.
   // Complete, pending tests
 
@@ -16,14 +16,18 @@ export function getBookList (user) {
     })
 }
 
-export function postBookToList (userId, bookApiId) {
+export const postBookToList = (newBook) => {
   // To be called when user clicks Add button on BookDetail.jsx
   // Sending book_api_id and user_id to serverside to add to user's booklist
-
+  console.log('nB', newBook)
+  const hardCodedUserId = 1
+  const { image, isbn } = newBook
   const bookDetails = {
-    userId: userId,
-    bookApiId: bookApiId
+    userId: hardCodedUserId,
+    bookApiId: isbn,
+    imageUrl: image
   }
+  console.log('bookDetails', bookDetails)
   return request.post('/api/v1/books/')
     .send(bookDetails)
     .then((res) => {
@@ -32,7 +36,7 @@ export function postBookToList (userId, bookApiId) {
     })
 }
 
-export function delBookFromList (userId, bookApiId) {
+export const delBookFromList = (userId, bookApiId) => {
   // To be called when user clicks Remove button on BookDetail.jsx
   // Sending book_api_id and user_id to serverside to remove from user's booklist
 
