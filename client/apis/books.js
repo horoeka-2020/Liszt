@@ -9,11 +9,10 @@ export const getBookList = (user) => {
   // Complete, pending tests
 
   const hardCodedUserId = 1
-  return request.get(`/api/v1/books/${hardCodedUserId}`)
-    .then((res) => {
-      console.log(res)
-      return res.body
-    })
+  return request.get(`/api/v1/books/${hardCodedUserId}`).then((res) => {
+    console.log(res)
+    return res.body
+  })
 }
 
 export const postBookToList = (newBook) => {
@@ -28,7 +27,8 @@ export const postBookToList = (newBook) => {
     imageUrl: image
   }
   console.log('bookDetails', bookDetails)
-  return request.post('/api/v1/books/')
+  return request
+    .post('/api/v1/books/')
     .send(bookDetails)
     .then((res) => {
       console.log(res)
@@ -39,12 +39,14 @@ export const postBookToList = (newBook) => {
 export const delBookFromList = (userId, bookApiId) => {
   // To be called when user clicks Remove button on BookDetail.jsx
   // Sending book_api_id and user_id to serverside to remove from user's booklist
+  // TODO hardcode userID and remove from function params
 
   const bookDetails = {
     userId: userId,
     bookApiId: bookApiId
   }
-  return request.del('/api/v1/books/')
+  return request
+    .del('/api/v1/books/')
     .send(bookDetails)
     .then((res) => {
       console.log(res)

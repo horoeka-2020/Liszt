@@ -21,8 +21,9 @@ class BookLibrary extends React.Component {
     return (
       <div>
         {this.state.books.map((book) => {
-          return <BookCard image={book.imageUrl} key={book.bookApiId} />
+          return <BookCard image={book.imageUrl} />
         })}
+        {/* key={book.bookApiId} */}
       </div>
     )
   }
