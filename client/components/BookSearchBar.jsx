@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
-export default function BookApi(props) {
+export default function BookSearchBar(props) {
   const [book, setBook] = useState('')
   const [apiKey, setApiKey] = useState(
     'AIzaSyCnNZoJRVKldJLWrQ4A5DFRBtRud30H4jw'
@@ -10,7 +10,6 @@ export default function BookApi(props) {
 
   function handleChange(e) {
     const book = e.target.value
-
     setBook(book)
   }
   //ISBN:

@@ -1,7 +1,7 @@
 import React from 'react'
 
-class CarouselImage extends React.Component {
-  render () {
+class BookCard extends React.Component {
+  render() {
     return (
       <a className='carousel-item' href='#one!'>
         <img src={this.props.image} />
@@ -10,4 +10,4 @@ class CarouselImage extends React.Component {
   }
 }
 
-export default CarouselImage
+export default BookCard

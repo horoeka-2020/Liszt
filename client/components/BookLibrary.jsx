@@ -1,15 +1,15 @@
 import React from 'react'
 // import M from 'materialize-css'
 import 'materialize-css/dist/css/materialize.min.css'
-import CarouselImage from './CarouselImage'
+import BookCard from './BookCard'
 import { getBookList } from '../apis/books'
 
-class Carousel extends React.Component {
+class BookLibrary extends React.Component {
   state = {
     books: []
   }
 
-  componentDidMount () {
+  componentDidMount() {
     getBookList(8).then((books) =>
       this.setState({
         books: books.books
@@ -17,16 +17,18 @@ class Carousel extends React.Component {
     )
   }
 
-  render () {
-    return <div>{this.state.books.map((book) => {
-      return <CarouselImage
-        image={book.imageUrl}
-        key={book.bookApiId}/>
-    })}</div>
+  render() {
+    return (
+      <div>
+        {this.state.books.map((book) => {
+          return <BookCard image={book.imageUrl} key={book.bookApiId} />
+        })}
+      </div>
+    )
   }
 }
 
-export default Carousel
+export default BookLibrary
 
 // export default class Carousel extends React.Component {
 //   state = {
