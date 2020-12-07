@@ -1,4 +1,20 @@
 .button-center {
   display: block;
-  margin: 10px auto;
+  margin: 4px auto;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+
+.button-size {
+  height: 175px;
+  width: 360px;
+  text-align: center;
+}
+
+.button-style {
+  border-style: solid;
+  border-width: 8px;
+  border-color: black;
+  background-color: #ffe940;
 }
