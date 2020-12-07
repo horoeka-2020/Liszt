@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   //   display: flex,
   //   // paddingTop: '56.25%' // 16:9
   // },
+
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -63,7 +64,7 @@ const BookCard = ({
 
   return (
     <Card className="card"
-      style={{ backgroundColor: 'transparent', borderRadius: '30px'}}>
+      style={{ backgroundColor: 'transparent', borderRadius: '30px' }}>
       <CardHeader
       />
       <CardMedia
@@ -87,8 +88,9 @@ const BookCard = ({
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography className="card-font" paragraph>{title}</Typography>
-          <Typography paragraph>{author}</Typography>
+          <Typography
+            style={{ fontFamily: 'rubik',fontSize: '27px', color: '#8b2eff', textAlign: 'center'}} paragraph>{title}</Typography>
+          <Typography style={{ fontFamily: 'rubik',fontSize: '19px', color: '#8b2eff', textAlign: 'center'}}paragraph>{author}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
             <DeleteForeverTwoToneIcon />
           </IconButton>
