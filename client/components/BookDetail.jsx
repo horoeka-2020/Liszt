@@ -107,14 +107,4 @@ const BookDetail = ({
   )
 }
 
-// const BookDetail = ({ key, alt, image }) => {
-//   // const book = props.book
-
-//   return (
-//     <div>
-//       <img src={image === undefined ? '' : `${image}`} alt={alt} key={key} />
-//     </div>
-//   )
-//  }
-
 export default BookDetail
