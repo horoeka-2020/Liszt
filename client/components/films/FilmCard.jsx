@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
 import clsx from 'clsx'
 
-import { delBookFromList } from '../apis/books'
+import { delFilmFromList } from '../../apis/films'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const BookCard = ({
+const FilmCard = ({
   key,
   image,
   refreshList,
@@ -46,13 +46,13 @@ const BookCard = ({
     setExpanded(!expanded)
   }
 
-  const handleRemoveBook = () => {
-    const book = {
+  const handleRemoveFilm = () => {
+    const film = {
       isbn
     }
-    delBookFromList(book)
-      .then((books) => {
-        refreshList(books)
+    delFilmFromList(film)
+      .then((films) => {
+        refreshList(films)
       })
   }
 
@@ -83,7 +83,7 @@ const BookCard = ({
         <CardContent>
           <Typography paragraph>{title}</Typography>
           <Typography paragraph>{author}</Typography>
-          <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
+          <IconButton aria-label='remove from list' onClick={handleRemoveFilm}>
             <DeleteForeverTwoToneIcon />
           </IconButton>
         </CardContent>
@@ -92,4 +92,4 @@ const BookCard = ({
   )
 }
 
-export default BookCard
+export default FilmCard
