@@ -8,7 +8,7 @@ module.exports = {
 }
 // gets the books of the user
 function getUserBooksList (userId, db = connection) {
-  return db('book_list').where('user_id', userId).select('id', 'user_id as userId', 'book_api_id as bookApiId', 'image_url as imageUrl')
+  return db('book_list').where('user_id', userId).select('id', 'user_id as userId', 'title', 'book_api_id as bookApiId', 'image_url as imageUrl', 'author', 'description')
 }
 
 function getBooktById (id, db = connection) {
@@ -20,8 +20,10 @@ function addBooksToBookList (newBook, db = connection) {
     .insert({
       user_id: newBook.userId,
       book_api_id: newBook.bookApiId,
-      image_url: newBook.imageUrl
-
+      title: newBook.title,
+      image_url: newBook.imageUrl,
+      author: newBook.author,
+      description: newBook.author
     })
 }
 
@@ -35,12 +37,3 @@ function removeBooksFromBookList (bookApiId, userId, db = connection) {
       console.log('Number of records deleted:', count)
     })
 }
-
-// function addBookToBookList (newBook, db = connect) {
-//   return db('book_list')
-//     .insert({
-//       user_id: newBook.userId,
-//       book_api_id: newBook.bookApiId,
-//       image_url: newBook.imageUrl
-//     })
-// }
