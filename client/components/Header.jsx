@@ -1,9 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Header() {
+function Header () {
   return (
     <header className='container'>
-      <h1 className='header'>LISZT</h1>
+      <Link to='/home'>
+        <h1 className='header'>LISZT</h1>
+      </Link>
     </header>
   )
 }

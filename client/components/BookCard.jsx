@@ -92,7 +92,7 @@ const BookCard = ({
             style={{ fontFamily: 'rubik',fontSize: '27px', color: '#8b2eff', textAlign: 'center'}} paragraph>{title}</Typography>
           <Typography style={{ fontFamily: 'rubik',fontSize: '19px', color: '#8b2eff', textAlign: 'center'}}paragraph>{author}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
-            <DeleteForeverTwoToneIcon />
+            <DeleteForeverTwoToneIcon style={{color: 'red', size: 'large'}} />
           </IconButton>
         </CardContent>
       </Collapse>
