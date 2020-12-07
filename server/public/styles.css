@@ -18506,35 +18506,48 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 html,
 body {
   font-family: "Rubik", sans-serif;
-  background-color: #ffe940;
+  background-color: #ebdbff;
 }
 
 .header {
-  color: black;
+  color: #8b2eff;
   text-align: center;
-  font-size: 25px;
+  font-size: 31px;
   margin: 15px;
 }
 
 .button-center {
-  display: block;
-  margin: 4px auto;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .button-size {
   height: 175px;
-  width: 360px;
+  width: 370px;
   text-align: center;
 }
 
 .button-style {
   border-style: solid;
-  border-width: 8px;
-  border-color: black;
-  background-color: #ffe940;
+  border-width: 12px;
+  background-color: #ebdbff;
+}
+
+.music-button {
+  color: #2652ff;
+  border-color: #2652ff;
+}
+
+.book-button {
+  color: #ff4400;
+  border-color: #ff4400;
+}
+
+.film-button {
+  color: #ff4fc4;
+  border-color: #ff4fc4;
 }
 
 .body {
@@ -18543,9 +18556,8 @@ body {
 }
 
 .button-font {
-  font-size: 70px;
+  font-size: 94px;
   font-family: "Rubik", sans-serif;
-  color: black;
 }
 
 /*# sourceMappingURL=styles.css.map*/

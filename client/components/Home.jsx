@@ -1,6 +1,4 @@
-import { Container } from '@material-ui/core'
 import React from 'react'
-import BookList from './BookList'
 import { Link } from 'react-router-dom'
 
 export class Home extends React.Component {
@@ -10,18 +8,18 @@ export class Home extends React.Component {
         <div className='columns'>
           <div className='column is-full'>
             <Link to='/booklist'>
-              <button className='button button-size button-center button-font button-style is-rounded'>BOOKS</button>
+              <button className='button button-size button-center button-font button-style is-rounded book-button'>BOOKS</button>
             </Link>
           </div>
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-size button-center button-font button-style is-rounded'>MUSIC</button>
+            <button className='button button-size button-center button-font button-style is-rounded music-button'>MUSIC</button>
           </div>
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-size button-center button-font button-style is-rounded'>FILM</button>
+            <button className='button button-size button-center button-font button-style is-rounded film-button'>FILM</button>
           </div>
         </div>
       </section>
