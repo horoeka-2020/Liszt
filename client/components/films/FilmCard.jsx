@@ -32,12 +32,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const FilmCard = ({
-  key,
-  image,
-  refreshList,
-  isbn,
   title,
-  author
+  year,
+  refreshList,
+  director,
+  plot,
+  runningTime,
+  image,
+  imdbId
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -63,7 +65,7 @@ const FilmCard = ({
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
-        key={key}
+        key={imdbId}
       />
 
       <CardActions disableSpacing>
@@ -82,7 +84,7 @@ const FilmCard = ({
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography paragraph>{title}</Typography>
-          <Typography paragraph>{author}</Typography>
+          <Typography paragraph>{director}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveFilm}>
             <DeleteForeverTwoToneIcon />
           </IconButton>
