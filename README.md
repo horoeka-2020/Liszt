@@ -100,7 +100,7 @@ Delete account
 
 ### Database Diagram
 ![Entity Relationship Diagram](docs/erd.png)
-[Liszt ERD on dbdiagram.io](https://dbdiagram.io/d/5fc98d333a78976d7b7e743b)
+[Liszt ERD on dbdiagram.io](https://dbdiagram.io/d/5fce9fbb9a6c525a03ba2a27)
 
 ## Git Policy
 How to merge (e.g. Feature branch to front-end)
