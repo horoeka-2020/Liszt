@@ -1,4 +1,4 @@
-exports.up = function (knex) {
+exports.up = (knex) => {
   return knex.schema.createTable('film_list', table => {
     table.increments('id').primary()
     table.integer('user_id').references('users.id')// how to make a foreign key
@@ -9,6 +9,6 @@ exports.up = function (knex) {
   })
 }
 
-exports.down = function (knex) {
+exports.down = (knex) => {
   return knex.schema.dropTable('film_list')
 }

@@ -19,6 +19,14 @@ exports.seed = function (knex) {
           title: 'Ratatouille',
           year: '2007',
           image_url: 'https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg'
+        },
+        {
+          id: 3,
+          user_id: 1,
+          film_api_id: 'tt0382932',
+          title: 'The Goonies',
+          year: '2007',
+          image_url: 'leshgo'
         }
 
       ])

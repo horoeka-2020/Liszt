@@ -2,7 +2,7 @@ const express = require('express')
 
 const db = require('../db/films')
 
-const router = express.router()
+const router = express.Router()
 
 router.get('/:userId', (req, res) => {
   db.getUserFilmsList(req.params.userId)

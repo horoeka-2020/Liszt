@@ -11,9 +11,9 @@ function getUserFilmsList (userId, db = connection) {
 }
 
 function addFilmsToFilmList (newFilm, db = connection) {
-  return db('film _list')
+  return db('film_list')
     .insert({
-      userId: newFilm.userId,
+      user_id: newFilm.userId,
       film_api_id: newFilm.filmApiId,
       title: newFilm.title,
       year: newFilm.year,
