@@ -23,11 +23,11 @@ test('getUserFilms returns films', () => {
 test('addFilmsToFilmList inserts a new Film from the imdb api', () => {
   const actual = {
     id: 3,
-    user_id: 2,
-    film_api_id: 'tt0382932',
+    userId: 2,
+    filmApiId: 'tt0382932',
     title: 'Ratatouille the Revenge of the chef remi',
     year: '2020',
-    image_url: 'https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg'
+    imageUrl: 'https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_SX300.jpg'
   }
   return db.addFilmsToFilmList(actual, testDb)
     .then(event => {
