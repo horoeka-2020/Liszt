@@ -72,6 +72,7 @@ const BookDetail = ({
     postBookToList(newBook)
 
     // resetResults()
+    console.log(history)
     history.push('/booklist')
   }
 

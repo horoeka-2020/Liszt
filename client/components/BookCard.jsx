@@ -16,6 +16,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
+import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
+
 import { delBookFromList } from '../apis/books'
 
 const useStyles = makeStyles((theme) => ({
@@ -45,11 +47,12 @@ const BookCard = ({
   key,
   // alt,
   image,
-  // author,
   // description,
   // resetResults,
-  history,
-  isbn
+  refreshList,
+  isbn,
+  title,
+  author
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -65,11 +68,12 @@ const BookCard = ({
       // image,
       isbn
     }
-    console.log(book) // Book
-    delBookFromList(book) // delBookFromList(book)
+    delBookFromList(book)
+      .then((books) => {
+        refreshList(books)
+      }) // delBookFromList(book)
 
     // resetResults()
-    history.push('/booklist')
   }
 
   return (
@@ -92,9 +96,6 @@ const BookCard = ({
       />
 
       <CardActions disableSpacing>
-        <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
-          {/* <AddCircleIcon /> */}
-        </IconButton>
 
         <IconButton
           className={clsx(classes.expand, {
@@ -109,7 +110,11 @@ const BookCard = ({
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          {/* <Typography paragraph>{description}</Typography> */}
+          <Typography paragraph>{title}</Typography>
+          <Typography paragraph>{author}</Typography>
+          <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
+            <DeleteForeverTwoToneIcon />
+          </IconButton>
         </CardContent>
       </Collapse>
     </Card>

@@ -17,11 +17,22 @@ class BookLibrary extends React.Component {
     )
   }
 
+  refreshList = (books) => {
+    this.setState({
+      books: books
+    })
+  }
+
   render () {
     return (
       <div>
         {this.state.books.map((book) => {
-          return <BookCard image={book.imageUrl} isbn={book.bookApiId} history={book.history} key={book.bookApiId}/>
+          return <BookCard author={book.author}
+            title={book.title}
+            image={book.imageUrl}
+            isbn={book.bookApiId}
+            refreshList={this.refreshList}
+            key={book.bookApiId}/>
         })}
       </div>
     )

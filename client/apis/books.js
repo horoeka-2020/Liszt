@@ -46,10 +46,11 @@ export const delBookFromList = (bookApiId) => {
   const hardCodedUserId = 1
   const bookDetails = {
     userId: hardCodedUserId,
-    bookApiId: bookApiId
+    bookApiId: bookApiId.isbn
   }
+  console.log(bookDetails)
   return request
-    .del('/api/v1/books/')
+    .delete('/api/v1/books/')
     .send(bookDetails)
     .then((res) => {
       console.log('delBookFromList > res', res)
