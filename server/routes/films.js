@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.get('/:userId', (req, res) => {
   db.getUserFilmsList(req.params.userId)
-    .then(films => {
-      return res.json({ films })
+    .then(filmz => {
+      return res.json({ filmz })
     })
     .catch(err => {
       res.status(500).json({ error: err.message })
