@@ -18,6 +18,7 @@ import { red } from '@material-ui/core/colors'
 import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
+import { postBookToList } from '../apis/books'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,12 +45,13 @@ const useStyles = makeStyles((theme) => ({
 
 const BookDetail = ({
   key,
-  alt,
+  title,
   image,
   author,
   description,
   resetResults,
-  history
+  history,
+  isbn
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -60,12 +62,17 @@ const BookDetail = ({
 
   const handleAddBook = () => {
     const newBook = {
-      key,
-      image
+      image,
+      isbn,
+      title,
+      description,
+      author
     }
     console.log(newBook)
+    postBookToList(newBook)
 
     // resetResults()
+    console.log(history)
     history.push('/booklist')
   }
 
@@ -77,20 +84,20 @@ const BookDetail = ({
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title={alt}
+        title={title}
         subheader={author}
       />
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
-        alt={alt}
+        alt={title}
         key={key}
-        title={alt}
+        title={title}
       />
 
       <CardActions disableSpacing>
-        <IconButton aria-label='add to list'>
-          <AddCircleIcon onClick={handleAddBook} />
+        <IconButton aria-label='add to list' onClick={handleAddBook}>
+          <AddCircleIcon />
         </IconButton>
 
         <IconButton
@@ -121,6 +128,6 @@ const BookDetail = ({
 //       <img src={image === undefined ? '' : `${image}`} alt={alt} key={key} />
 //     </div>
 //   )
-// }
+//  }
 
 export default BookDetail
