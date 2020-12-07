@@ -21,13 +21,19 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import { postBookToList } from '../apis/books'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345
+  // },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '56.25%' // 16:9
+  // },
+  // cardFont: {
+  //   fontFamily: 'rubik',
+  //   fontSize: '27px',
+  //   color: '#8b2eff',
+  //   textAlign: 'center'
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -77,8 +83,15 @@ const BookDetail = ({
   }
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
+    <Card className="card"
+      style={{ backgroundColor: 'transparent', borderRadius: '30px' }}>
+
+      <Typography
+        style={{ fontFamily: 'rubik', fontSize: '27px', color: '#8b2eff', textAlign: 'center' }} title>{title}</Typography>
+      <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#8b2eff', textAlign: 'center' }}subheader>{author}</Typography>
+
+      {/*
+      </CardHeader>
         // action={
         //   <IconButton aria-label='settings'>
         //     <MoreVertIcon />
@@ -86,9 +99,10 @@ const BookDetail = ({
         // }
         title={title}
         subheader={author}
-      />
+      /> */}
+
       <CardMedia
-        className={classes.media}
+        className='image'
         image={image === undefined ? '' : `${image}`}
         alt={title}
         key={key}
@@ -113,10 +127,12 @@ const BookDetail = ({
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>{description}</Typography>
+          <Typography
+            style={{ fontFamily: 'rubik', fontSize: '1rem', color: '#8b2eff', textAlign: 'center' }} paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>
+
   )
 }
 
