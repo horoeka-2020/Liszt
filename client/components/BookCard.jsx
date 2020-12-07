@@ -7,15 +7,20 @@ import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
 import clsx from 'clsx'
 
 import { delBookFromList } from '../apis/books'
+import { FullscreenExit } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345,
+  //   display: flex,
+  // },
+  // media: {
+  //   height: 400,
+  //   width: 260,
+  //   justifyContent: center,
+  //   display: flex,
+  //   // paddingTop: '56.25%' // 16:9
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -57,11 +62,12 @@ const BookCard = ({
   }
 
   return (
-    <Card className={classes.root}>
+    <Card className="card"
+      style={{ backgroundColor: 'transparent', borderRadius: '30px'}}>
       <CardHeader
       />
       <CardMedia
-        className={classes.media}
+        className="image"
         image={image === undefined ? '' : `${image}`}
         key={key}
       />
@@ -81,7 +87,7 @@ const BookCard = ({
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>{title}</Typography>
+          <Typography className="card-font" paragraph>{title}</Typography>
           <Typography paragraph>{author}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
             <DeleteForeverTwoToneIcon />
