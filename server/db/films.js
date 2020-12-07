@@ -7,26 +7,24 @@ module.exports = {
 }
 
 function getUserFilmsList (userId, db = connection) {
-  return db('book_list').where('user_id', userId).select('id', 'user_id as userId', 'imdb_id as imdbId', 'title', 'year', 'plot', 'running_time as runningTime', 'image_url as imageUrl')
+  return db('film_list').where('user_id', userId).select('id', 'user_id as userId', 'film_api_id as filmApiId', 'title', 'year', 'image_url as imageUrl')
 }
 
 function addFilmsToFilmList (newFilm, db = connection) {
-  return db('book_list')
+  return db('film _list')
     .insert({
       userId: newFilm.userId,
-      imdb_id: newFilm.imdbId,
+      film_api_id: newFilm.film_api_id,
       title: newFilm.title,
       year: newFilm.year,
-      plot: newFilm.plot,
-      running_time: newFilm.runningTime,
       image_url: newFilm.imageUrl
     })
 }
 
-function removeFilmsFromFilmList (imdbId, userId, db = connection) {
+function removeFilmsFromFilmList (filmApiId, userId, db = connection) {
   return db('film_list')
     .delete()
-    .where('imdb_id', imdbId)
+    .where('film_api_id', filmApiId)
     .where('user_id', userId)
   // eslint-disable-next-line promise/always-return
     .then(count => {
