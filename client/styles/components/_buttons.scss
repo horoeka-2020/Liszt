@@ -1,4 +1,35 @@
 .button-center {
-  display: block;
-  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  // margin-left: auto;
+  // margin-right: auto;
+  align-items: center;
+}
+
+.button-size {
+  height: 175px;
+  width: 370px;
+  text-align: center;
+}
+
+.button-style {
+  border-style: solid;
+  border-width: 12px;
+  background-color: #ebdbff;
+}
+
+.music-button {
+  color: #2652ff;
+  border-color: #2652ff;
+}
+
+.book-button {
+  color: #ff4400;
+  border-color: #ff4400;
+}
+
+.film-button {
+  color: #ff4fc4;
+  border-color: #ff4fc4;
 }
