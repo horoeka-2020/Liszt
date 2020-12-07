@@ -8,13 +8,21 @@ const SearchResults = (props) => {
           key={book.volumeInfo.title}
           title={book.volumeInfo.title}
           image={
-            book.volumeInfo.imageLinks.thumbnail === undefined
+            book.volumeInfo.imageLinks === undefined
               ? ''
               : book.volumeInfo.imageLinks.thumbnail
           }
-          author={book.volumeInfo.authors[0]}
+          author={
+            book.volumeInfo.authors === undefined
+              ? ''
+              : book.volumeInfo.authors[0]
+          }
           description={book.volumeInfo.description}
-          isbn={book.volumeInfo.industryIdentifiers[0].identifier}
+          isbn={
+            book.volumeInfo.industryIdentifiers[0] === undefined
+              ? ''
+              : book.volumeInfo.industryIdentifiers[0].identifier
+          }
           // resetResults={props.resetResults}
           history={props.history}
         />

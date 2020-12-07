@@ -1,7 +1,17 @@
 import React from 'react'
 
 import AddCircleIcon from '@material-ui/icons/AddCircle'
-import { makeStyles, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography } from '@material-ui/core/'
+import {
+  makeStyles,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  IconButton,
+  Typography
+} from '@material-ui/core/'
 import clsx from 'clsx'
 import { red } from '@material-ui/core/colors'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -31,16 +41,16 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const FilmDetail = ({
-  title,
-  year,
-  image,
-  director,
-  plot,
+  Title,
+  Year,
+  Poster,
+  Director,
+  Plot,
   resetResults,
   history,
-  filmApiId // imdbId
+  imdbID
 }) => {
-  const classes = useStyles()history.push('/filmlist')
+  const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
   const handleExpandClick = () => {
@@ -71,15 +81,16 @@ const FilmDetail = ({
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title={title}
-        subheader={author}
+        title={Title}
+        subheader={Director}
+        subheader={Year}
       />
       <CardMedia
         className={classes.media}
-        image={image === undefined ? '' : `${image}`}
-        alt={title}
-        key={key}
-        title={title}
+        image={Poster === undefined ? '' : `${Poster}`}
+        alt={Title}
+        key={imdbID}
+        title={Title}
       />
 
       <CardActions disableSpacing>
@@ -100,7 +111,7 @@ const FilmDetail = ({
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>{description}</Typography>
+          <Typography paragraph>{Plot}</Typography>
         </CardContent>
       </Collapse>
     </Card>

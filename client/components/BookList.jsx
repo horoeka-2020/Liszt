@@ -9,7 +9,12 @@ const BookList = (props) => {
   return (
     <div>
       <BookSearchBar setResult={setResult} history={props.history} />
-      <Route exact path='/booklist' component={BookLibrary} history={props.history}/>
+      <Route
+        exact
+        path='/booklist'
+        component={BookLibrary}
+        history={props.history}
+      />
       <Route
         exact
         path='/booklist/searchresults'
