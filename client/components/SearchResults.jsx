@@ -7,7 +7,11 @@ const SearchResults = (props) => {
         <BookDetail
           key={book.volumeInfo.title}
           title={book.volumeInfo.title}
-          image={book.volumeInfo.imageLinks.thumbnail}
+          image={
+            book.volumeInfo.imageLinks.thumbnail === undefined
+              ? ''
+              : book.volumeInfo.imageLinks.thumbnail
+          }
           author={book.volumeInfo.authors[0]}
           description={book.volumeInfo.description}
           isbn={book.volumeInfo.industryIdentifiers[0].identifier}
