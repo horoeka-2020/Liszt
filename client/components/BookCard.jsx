@@ -1,22 +1,10 @@
 import React from 'react'
 
-import { makeStyles } from '@material-ui/core/styles'
-import clsx from 'clsx'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardContent from '@material-ui/core/CardContent'
-import CardActions from '@material-ui/core/CardActions'
-import Collapse from '@material-ui/core/Collapse'
-import Avatar from '@material-ui/core/Avatar'
-import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
+import { makeStyles, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography } from '@material-ui/core/'
 import { red } from '@material-ui/core/colors'
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
+import clsx from 'clsx'
 
 import { delBookFromList } from '../apis/books'
 
@@ -45,10 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 const BookCard = ({
   key,
-  // alt,
   image,
-  // description,
-  // resetResults,
   refreshList,
   isbn,
   title,
@@ -63,36 +48,22 @@ const BookCard = ({
 
   const handleRemoveBook = () => {
     const book = {
-      // const Book {isbn}
-      // key,
-      // image,
       isbn
     }
     delBookFromList(book)
       .then((books) => {
         refreshList(books)
-      }) // delBookFromList(book)
-
-    // resetResults()
+      })
   }
 
   return (
     <Card className={classes.root}>
       <CardHeader
-      // action={
-      //   <IconButton aria-label='settings'>
-      //     <MoreVertIcon />
-      //   </IconButton>
-      // }
-      // title={alt} // comment out until data is in database
-      // subheader={author} // comment out until data is in database
       />
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
-        // alt={alt} // comment out until data is in database
         key={key}
-        // title={alt} // comment out until data is in database
       />
 
       <CardActions disableSpacing>
@@ -120,15 +91,5 @@ const BookCard = ({
     </Card>
   )
 }
-
-// class BookCard extends React.Component {
-//   render() {
-//     return (
-//       <a className='carousel-item' href='#one!'>
-//         <img src={this.props.image} />
-//       </a>
-//     )
-//   }
-// }
 
 export default BookCard
