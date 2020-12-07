@@ -35,10 +35,11 @@ export const delFilmFromList = (filmApiId) => {
   // To be called when user clicks Remove button on their list.
 
   console.log(filmApiId)
+  console.log('filmApiId what format is this?', filmApiId)
   const hardCodedUserId = 1
   const filmDetails = {
     userId: hardCodedUserId,
-    filmApiId: filmApiId.isbn
+    filmApiId: filmApiId.imdbID
   }
   console.log(filmDetails)
   return request
