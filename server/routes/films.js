@@ -15,8 +15,8 @@ router.get('/:userId', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { title, year, director, plot, runningTime, imageUrl } = req.body
-  const newFilm = { title, year, director, plot, runningTime, imageUrl }
+  const { userId, title, year, filmApiId, imageUrl } = req.body
+  const newFilm = { userId, title, year, filmApiId, imageUrl }
   db.addFilmsToFilmList(newFilm)
     .then(() => db.getUserFilmsList(userId))
     .then((films) => {
@@ -29,8 +29,8 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-  const { imdbId, userId } = (req.body)
-  db.removeFilmsFromFilmList(imdbId, userId)
+  const { filmApiId, userId } = (req.body)
+  db.removeFilmsFromFilmList(filmApiId, userId)
     .then(() => db.getUserFilmsList(userId))
     .then((films) => {
       res.json(films)
