@@ -11,8 +11,6 @@ const FilmSearchResults = (props) => {
           key={film.imdbID}
           Title={film.Title}
           Poster={film.Poster}
-          Director={film.Director}
-          Plot={film.Plot}
           imdbID={film.imdbID}
           // resetResults={props.resetResults}
           history={props.history}

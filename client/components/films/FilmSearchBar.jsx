@@ -17,10 +17,10 @@ export default function FilmSearchBar(props) {
     e.preventDefault()
 
     axios
-      .get(`http://www.omdbapi.com/?t=${film}&apikey=${apiKey}`)
+      .get(`http://www.omdbapi.com/?s=${film}&apikey=${apiKey}`)
       .then((data) => {
-        console.log(data.data)
-        props.setResult(data.data)
+        console.log(data.data.Search)
+        props.setResult(data.data.Search)
         props.history.push('/filmlist/searchresults')
       })
       .catch((err) => {

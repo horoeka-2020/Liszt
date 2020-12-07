@@ -29,12 +29,12 @@ class FilmLibrary extends React.Component {
         {this.state.films.map((film) => {
           return (
             <FilmCard
-              director={film.director}
-              title={film.title}
-              image={film.imageUrl}
-              isbn={film.filmApiId}
+              title={film.Title}
+              image={film.Poster}
+              imdbID={film.imdbID}
               refreshList={this.refreshList}
-              key={film.filmApiId}
+              key={film.imdbID}
+              year={film.Year}
             />
           )
         })}
