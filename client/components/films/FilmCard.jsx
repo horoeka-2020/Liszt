@@ -39,7 +39,7 @@ const FilmCard = ({
   plot,
   runningTime,
   image,
-  imdbId
+  filmApiId// imdbId
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -50,7 +50,7 @@ const FilmCard = ({
 
   const handleRemoveFilm = () => {
     const film = {
-      isbn
+      filmApiId
     }
     delFilmFromList(film)
       .then((films) => {
@@ -65,7 +65,7 @@ const FilmCard = ({
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
-        key={imdbId}
+        key={filmApiId}
       />
 
       <CardActions disableSpacing>

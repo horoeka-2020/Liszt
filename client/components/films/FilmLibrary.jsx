@@ -27,7 +27,7 @@ class FilmLibrary extends React.Component {
     return (
       <div>
         {this.state.films.map((film) => {
-          return <FilmCard author={film.author}
+          return <FilmCard director={film.director}
             title={film.title}
             image={film.imageUrl}
             isbn={film.filmApiId}

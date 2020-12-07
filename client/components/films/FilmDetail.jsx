@@ -31,14 +31,14 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const FilmDetail = ({
-  key,
   title,
+  year,
   image,
-  author,
-  description,
+  director,
+  plot,
   resetResults,
   history,
-  isbn
+  filmApiId // imdbId
 }) => {
   const classes = useStyles()history.push('/filmlist')
   const [expanded, setExpanded] = React.useState(false)
