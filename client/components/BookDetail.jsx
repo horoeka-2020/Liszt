@@ -109,9 +109,9 @@ const BookDetail = ({
         title={title}
       />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ justifyContent: 'center', padding: '0' }} disableSpacing>
         <IconButton aria-label='add to list' onClick={handleAddBook}>
-          <AddCircleIcon />
+          <AddCircleIcon style={{ color: '#8b2eff', fontSize: '45' }} />
         </IconButton>
 
         <IconButton
@@ -126,7 +126,7 @@ const BookDetail = ({
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
+        <CardContent style={{padding: '0' }}>
           <Typography
             style={{ fontFamily: 'rubik', fontSize: '1rem', color: '#8b2eff', textAlign: 'center' }} paragraph>{description}</Typography>
         </CardContent>

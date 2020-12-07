@@ -73,7 +73,7 @@ const BookCard = ({
         key={key}
       />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ padding: '0' }}disableSpacing>
 
         <IconButton
           className={clsx(classes.expand, {
@@ -87,12 +87,12 @@ const BookCard = ({
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
+        <CardContent style={{padding: '0' }}>
           <Typography
             style={{ fontFamily: 'rubik',fontSize: '27px', color: '#8b2eff', textAlign: 'center'}} paragraph>{title}</Typography>
           <Typography style={{ fontFamily: 'rubik',fontSize: '19px', color: '#8b2eff', textAlign: 'center'}}paragraph>{author}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
-            <DeleteForeverTwoToneIcon style={{color: 'red', size: 'large'}} />
+            <DeleteForeverTwoToneIcon style={{color: '#8b2eff', fontSize: '25'}} />
           </IconButton>
         </CardContent>
       </Collapse>
