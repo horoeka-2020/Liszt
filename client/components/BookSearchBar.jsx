@@ -1,24 +1,26 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import SearchIcon from '@material-ui/icons/Search'
+import IconButton from '@material-ui/core/IconButton'
+
 import axios from 'axios'
 
-export default function BookSearchBar(props) {
+export default function BookSearchBar (props) {
   const [book, setBook] = useState('')
   const [apiKey, setApiKey] = useState(
     'AIzaSyCnNZoJRVKldJLWrQ4A5DFRBtRud30H4jw'
   )
 
-  function handleChange(e) {
+  function handleChange (e) {
     const book = e.target.value
     setBook(book)
   }
-  //ISBN:
-  //https://www.googleapis.com/books/v1/volumes?q=isbn:9781448823734&maxResults=1
+  // ISBN:
+  // https://www.googleapis.com/books/v1/volumes?q=isbn:9781448823734&maxResults=1
 
-  //ID:
-  //https://www.googleapis.com/books/v1/volumes?q=id:gx4O4kpbCd8C&maxResults=1
+  // ID:
+  // https://www.googleapis.com/books/v1/volumes?q=id:gx4O4kpbCd8C&maxResults=1
 
-  function handleSubmit(e) {
+  function handleSubmit (e) {
     e.preventDefault()
 
     axios
@@ -37,17 +39,15 @@ export default function BookSearchBar(props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="search-bar"onSubmit={handleSubmit}>
         <input
           type='text'
           onChange={handleChange}
-          className='searchbar'
+          className='searchbar search-font'
           placeholder='Search for books'
           autoComplete='off'
         />
-        <button type='submit' className=''>
-          Submit
-        </button>
+        <IconButton type='submit'> <SearchIcon /></IconButton>
       </form>
     </>
   )
