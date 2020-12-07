@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 const BookDetail = ({
   key,
-  alt,
+  title,
   image,
   author,
   description,
@@ -62,9 +62,11 @@ const BookDetail = ({
 
   const handleAddBook = () => {
     const newBook = {
-      key,
       image,
-      isbn
+      isbn,
+      title,
+      description,
+      author
     }
     console.log(newBook)
     postBookToList(newBook)
@@ -81,15 +83,15 @@ const BookDetail = ({
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title={alt}
+        title={title}
         subheader={author}
       />
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
-        alt={alt}
+        alt={title}
         key={key}
-        title={alt}
+        title={title}
       />
 
       <CardActions disableSpacing>

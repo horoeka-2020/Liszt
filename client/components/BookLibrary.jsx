@@ -9,7 +9,7 @@ class BookLibrary extends React.Component {
     books: []
   }
 
-  componentDidMount() {
+  componentDidMount () {
     getBookList(8).then((books) =>
       this.setState({
         books: books.books
@@ -17,13 +17,12 @@ class BookLibrary extends React.Component {
     )
   }
 
-  render() {
+  render () {
     return (
       <div>
         {this.state.books.map((book) => {
-          return <BookCard image={book.imageUrl} />
+          return <BookCard image={book.imageUrl} isbn={book.bookApiId} history={book.history} key={book.bookApiId}/>
         })}
-        {/* key={book.bookApiId} */}
       </div>
     )
   }

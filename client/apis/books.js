@@ -20,11 +20,14 @@ export const postBookToList = (newBook) => {
   // Sending book_api_id and user_id to serverside to add to user's booklist
   console.log('nB', newBook)
   const hardCodedUserId = 1
-  const { image, isbn } = newBook
+  const { image, isbn, title, description, author } = newBook
   const bookDetails = {
     userId: hardCodedUserId,
     bookApiId: isbn,
-    imageUrl: image
+    imageUrl: image,
+    author: author,
+    title: title,
+    description: description
   }
   console.log('bookDetails', bookDetails)
   return request

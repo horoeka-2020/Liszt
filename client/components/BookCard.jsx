@@ -43,11 +43,11 @@ const useStyles = makeStyles((theme) => ({
 
 const BookCard = ({
   key,
-  //alt,
+  // alt,
   image,
-  //author,
-  //description,
-  //resetResults,
+  // author,
+  // description,
+  // resetResults,
   history,
   isbn
 }) => {
@@ -61,8 +61,8 @@ const BookCard = ({
   const handleRemoveBook = () => {
     const book = {
       // const Book {isbn}
-      //key,
-      //image,
+      // key,
+      // image,
       isbn
     }
     console.log(book) // Book
