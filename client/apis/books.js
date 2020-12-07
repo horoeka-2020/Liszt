@@ -36,20 +36,20 @@ export const postBookToList = (newBook) => {
     })
 }
 
-export const delBookFromList = (userId, bookApiId) => {
+export const delBookFromList = (bookApiId) => {
   // To be called when user clicks Remove button on BookDetail.jsx
   // Sending book_api_id and user_id to serverside to remove from user's booklist
-  // TODO hardcode userID and remove from function params
-
+  console.log(bookApiId)
+  const hardCodedUserId = 1
   const bookDetails = {
-    userId: userId,
+    userId: hardCodedUserId,
     bookApiId: bookApiId
   }
   return request
     .del('/api/v1/books/')
     .send(bookDetails)
     .then((res) => {
-      console.log(res)
+      console.log('delBookFromList > res', res)
       return res.body
     })
 }
