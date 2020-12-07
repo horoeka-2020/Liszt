@@ -48,7 +48,7 @@ const BookCard = ({
   //author,
   //description,
   //resetResults,
-  //history,
+  history,
   isbn
 }) => {
   const classes = useStyles()
@@ -92,7 +92,7 @@ const BookCard = ({
       />
 
       <CardActions disableSpacing>
-        <IconButton aria-label='add to list' onClick={handleRemoveBook}>
+        <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
           {/* <AddCircleIcon /> */}
         </IconButton>
 
