@@ -15,8 +15,8 @@ router.get('/:userId', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const { userId } = req.body
-  const newSong = { userId }
+  const { userId, songApiId, title, artist, imageUrl, album } = req.body
+  const newSong = { userId, songApiId, title, artist, imageUrl, album }
   db.addSongsToSongList(newSong)
     .then(() => db.getUserSongsList(userId))
     .then((songs) => {

@@ -9,7 +9,7 @@ module.exports = {
 function getUserSongsList (userId, db = connection) {
   return db('song_list')
     .where('user_id', userId)
-    .select('id', 'user_id as userId')
+    .select('id', 'user_id as userId', 'image_url as imageUrl', 'title', 'artist', 'album', 'song_api_id as songApiId')
 }
 
 function addSongsToSongList (newSong, db = connection) {
@@ -19,7 +19,8 @@ function addSongsToSongList (newSong, db = connection) {
       song_api_id: newSong.songApiId,
       title: newSong.title,
       artist: newSong.artist,
-      image_url: newSong.imageUrl
+      image_url: newSong.imageUrl,
+      album: newSong.album
     })
 }
 
