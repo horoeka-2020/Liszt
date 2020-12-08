@@ -9,7 +9,15 @@ const router = express.Router()
 //       return null
 //     })
 //     .catch((err) => {
+<<<<<<< HEAD
 //       res.status(500).json({ message: 'Somthing went wrong' })
+||||||| e5bc54e
+
+//       res.status(500).json({ message: 'Somthing went wrong' })
+=======
+
+//
+>>>>>>> 9080be16249c9c133bdca109c9430b715f384562
 //     })
 // })
 
