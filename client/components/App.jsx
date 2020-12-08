@@ -10,7 +10,7 @@ import FilmSearchBar from './films/FilmSearchBar'
 import FilmList from './films/FilmList'
 
 export class App extends React.Component {
-  render() {
+  render () {
     return (
       <div className='app'>
         <Header path='/' />

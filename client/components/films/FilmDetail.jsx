@@ -18,13 +18,13 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { postFilmToList } from '../../apis/films'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345
+  // },
+  // media: {
+  //   height: 100,
+  //   paddingTop: '56.25%' // 16:9
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -71,21 +71,27 @@ const FilmDetail = ({
   }
 
   return (
-    <Card className={classes.root}>
-      <CardHeader title={Title} subheader={Year} />
+    <Card className="card"
+      style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#8b2eff' }}>
+
+      <Typography
+        style={{ fontFamily: 'rubik', fontSize: '27px', color: '#8b2eff', textAlign: 'center' }} title>{Title}</Typography>
+      <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#8b2eff', textAlign: 'center' }}subheader>{Year}</Typography>
+      {/*
+      <CardHeader title={Title} subheader={Year} /> */}
       <CardMedia
-        className={classes.media}
+        className='image'
         image={Poster === undefined ? '' : `${Poster}`}
         alt={Title}
-        // key={filmApiId}
+        key={filmApiId}
         title={Title}
       />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ justifyContent: 'left', padding: '0' }}disableSpacing>
         <IconButton aria-label='add to list' onClick={handleAddFilm}>
-          <AddCircleIcon />
+          <AddCircleIcon style={{ color: '#8b2eff', fontSize: '45' }}/>
         </IconButton>
-
+        {/*
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded
@@ -94,14 +100,14 @@ const FilmDetail = ({
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon />
-        </IconButton>
+          <ExpandMoreIcon style={{ color: '#8b2eff', fontSize: '45' }}/>
+        </IconButton> */}
       </CardActions>
-      <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
-          <Typography paragraph>{Title}</Typography>
+      {/* <Collapse in={expanded} timeout='auto' unmountOnExit>
+        <CardContent style={{ padding: '0' }}>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '1rem', color: '#8b2eff', textAlign: 'center' }} paragraph>{Title}</Typography>
         </CardContent>
-      </Collapse>
+      </Collapse> */}
     </Card>
   )
 }

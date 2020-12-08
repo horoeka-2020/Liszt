@@ -16,15 +16,22 @@ import clsx from 'clsx'
 import { red } from '@material-ui/core/colors'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { postBookToList } from '../apis/books'
+import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345
+  // },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '56.25%' // 16:9
+  // },
+  // cardFont: {
+  //   fontFamily: 'rubik',
+  //   fontSize: '27px',
+  //   color: '#8b2eff',
+  //   textAlign: 'center'
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -73,19 +80,35 @@ const BookDetail = ({
   }
 
   return (
-    <Card className={classes.root}>
-      <CardHeader title={title} subheader={author} />
+    <Card className="card"
+      style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#8b2eff' }}>
+
+      <Typography
+        style={{ fontFamily: 'rubik', fontSize: '27px', color: '#8b2eff', textAlign: 'center' }} title>{title}</Typography>
+      <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#8b2eff', textAlign: 'center' }}subheader>{author}</Typography>
+
+      {/*
+      </CardHeader>
+        // action={
+        //   <IconButton aria-label='settings'>
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
+        title={title}
+        subheader={author}
+      /> */}
+
       <CardMedia
-        className={classes.media}
+        className='image'
         image={image === undefined ? '' : `${image}`}
         alt={title}
         key={key}
         title={title}
       />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ justifyContent: 'center', padding: '0' }} disableSpacing>
         <IconButton aria-label='add to list' onClick={handleAddBook}>
-          <AddCircleIcon />
+          <AddCircleIcon style={{ color: '#8b2eff', fontSize: '45' }} />
         </IconButton>
 
         <IconButton
@@ -96,15 +119,17 @@ const BookDetail = ({
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon />
+          <ExpandMoreIcon style={{ color: '#8b2eff', fontSize: '45' }} />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
-          <Typography paragraph>{description}</Typography>
+        <CardContent style={{ padding: '0' }}>
+          <Typography
+            style={{ fontFamily: 'rubik', fontSize: '1rem', color: '#8b2eff', textAlign: 'center' }} paragraph>{description}</Typography>
         </CardContent>
       </Collapse>
     </Card>
+
   )
 }
 
