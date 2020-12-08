@@ -10,10 +10,15 @@ export const getBookList = (user) => {
 
 export const postMusicToList = (newMusic) => {
   const hardCodedUserId = 1
-  const { image } = newMusic
+  const { image, musicApiId, title, artist, album } = newMusic
   const musicDetails = {
     userId: hardCodedUserId,
-    imageUrl: image
+    imageUrl: image,
+    artist: artist,
+    songApiId: musicApiId,
+    album: album,
+    title: title
+
   }
   return request
     .post('/api/v1/music/')
@@ -28,7 +33,7 @@ export const delMusicFromList = (musicApiId) => {
   const hardCodedUserId = 1
   const musicDetails = {
     userId: hardCodedUserId,
-    // need a propperty?
+    // need a property?
     musicApiId: musicApiId.isbn
   }
   return request
