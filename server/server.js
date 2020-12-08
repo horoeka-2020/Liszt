@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 
 const bookRoutes = require('./routes/books')
-const songRoutes = require('./db/songs')
+const songRoutes = require('./routes/songs')
 
 const server = express()
 
