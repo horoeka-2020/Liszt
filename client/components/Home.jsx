@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export class Home extends React.Component {
-  render() {
+  render () {
     return (
       <section className='container body'>
         <div className='columns'>
@@ -14,12 +14,14 @@ export class Home extends React.Component {
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-size button-center button-font button-style is-rounded music-button'>MUSIC</button>
+            <Link to='/filmlist'>
+              <button className='button button-size button-center button-font button-style is-rounded film-button'>FILM</button>
+            </Link>
           </div>
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-size button-center button-font button-style is-rounded film-button'>FILM</button>
+            <button className='button button-size button-center button-font button-style is-rounded music-button'>MUSIC</button>
           </div>
         </div>
       </section>

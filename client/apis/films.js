@@ -39,7 +39,7 @@ export const delFilmFromList = (filmApiId) => {
   const hardCodedUserId = 1
   const filmDetails = {
     userId: hardCodedUserId,
-    filmApiId: filmApiId.imdbID
+    filmApiId: filmApiId.filmApiId
   }
   console.log(filmDetails)
   return request

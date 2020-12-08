@@ -18532,12 +18532,7 @@ body {
 .button-style {
   border-style: solid;
   border-width: 12px;
-  background-color: #ebdbff;
-}
-
-.music-button {
-  color: #2652ff;
-  border-color: #2652ff;
+  background-color: transparent;
 }
 
 .book-button {
@@ -18546,6 +18541,11 @@ body {
 }
 
 .film-button {
+  color: #2652ff;
+  border-color: #2652ff;
+}
+
+.music-button {
   color: #ff4fc4;
   border-color: #ff4fc4;
 }
@@ -18553,6 +18553,8 @@ body {
 .body {
   justify-content: center;
   align-items: center;
+  font-family: "Rubik", sans-serif;
+  background-color: transparent;
 }
 
 .button-font {
@@ -18568,8 +18570,7 @@ body {
 .search-bar {
   border-style: solid;
   border-width: 9px;
-  border-color: #8b2eff;
-  background-color: #ebdbff;
+  background-color: transparent;
   border-radius: 290486px;
   padding-left: calc(1em + 0.25em);
   padding-right: calc(1em + 0.25em);
@@ -18582,7 +18583,6 @@ body {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  color: #8b2eff;
   font-family: "Rubik", sans-serif;
   border-bottom: none;
 }
@@ -18613,7 +18613,6 @@ body {
   margin-bottom: 20px;
   border-style: solid;
   border-width: 8px;
-  border-color: #8b2eff;
 }
 
 /*# sourceMappingURL=styles.css.map*/

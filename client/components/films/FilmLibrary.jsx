@@ -12,7 +12,7 @@ class FilmLibrary extends React.Component {
   componentDidMount() {
     getFilmList(8).then((films) =>
       this.setState({
-        films: films
+        films: films.films
       })
     )
   }
@@ -24,17 +24,18 @@ class FilmLibrary extends React.Component {
   }
 
   render() {
+    console.log(this.state.films)
     return (
       <div>
         {this.state.films.map((film) => {
           return (
             <FilmCard
-              title={film.Title}
-              image={film.Poster}
-              filmApiId={film.imdbID}
+              title={film.title}
+              image={film.imageUrl}
+              filmApiId={film.filmApiId}
               refreshList={this.refreshList}
               key={film.imdbID}
-              year={film.Year}
+              year={film.year}
             />
           )
         })}

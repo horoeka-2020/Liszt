@@ -16,12 +16,7 @@
 .button-style {
   border-style: solid;
   border-width: 12px;
-  background-color: #ebdbff;
-}
-
-.music-button {
-  color: #2652ff;
-  border-color: #2652ff;
+  background-color: transparent;
 }
 
 .book-button {
@@ -30,6 +25,11 @@
 }
 
 .film-button {
+  color: #2652ff;
+  border-color: #2652ff;
+}
+
+.music-button {
   color: #ff4fc4;
   border-color: #ff4fc4;
 }
