@@ -18570,7 +18570,6 @@ body {
 .search-bar {
   border-style: solid;
   border-width: 9px;
-  border-color: #ff4400;
   background-color: transparent;
   border-radius: 290486px;
   padding-left: calc(1em + 0.25em);
@@ -18584,7 +18583,6 @@ body {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  color: #ff4400;
   font-family: "Rubik", sans-serif;
   border-bottom: none;
 }

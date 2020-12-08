@@ -62,7 +62,7 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
   return (
     <Card
       className='card'
-      style={{ backgroundColor: 'transparent', borderRadius: '30px' }}
+      style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#2652ff' }}
     >
       <CardHeader />
       <CardMedia
@@ -71,7 +71,7 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
         key={filmApiId}
       />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ padding: '0' }} disableSpacing>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded
@@ -80,15 +80,15 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon />
+          <ExpandMoreIcon style={{ color: '#2652ff', fontSize: '45' }}/>
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
-          <Typography paragraph>{title}</Typography>
-          <Typography paragraph>{year}</Typography>
-          <IconButton aria-label='remove from list' onClick={handleRemoveFilm}>
-            <DeleteForeverTwoToneIcon />
+        <CardContent style={{ padding: '0' }}>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '27px', color: '#2652ff', textAlign: 'center' }} paragraph>{title}</Typography>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#2652ff', textAlign: 'center' }}paragraph>{year}</Typography>
+          <IconButton aria-label='remove from list' onClick={handleRemoveFilm} style={{ paddingTop: '0' }}>
+            <DeleteForeverTwoToneIcon style={{ color: '#2652ff', fontSize: '27' }}/>
           </IconButton>
         </CardContent>
       </Collapse>
