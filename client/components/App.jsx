@@ -15,11 +15,11 @@ export class App extends React.Component {
       <div className='app'>
         <Header path='/' />
         <Route exact path='/' component={SignIn} />
-        <Route exact path='/booksearch' component={BookSearchBar} />
+        {/* <Route exact path='/booksearch' component={BookSearchBar} /> */}
         <Route exact path='/home' component={Home} />
         <Route path='/booklist' component={BookList} />
         <Route path='/filmlist' component={FilmList} />
-        <Route exact path='/filmsearch' component={FilmSearchBar} />
+        {/* <Route exact path='/filmsearch' component={FilmSearchBar} /> */}
       </div>
     )
   }
