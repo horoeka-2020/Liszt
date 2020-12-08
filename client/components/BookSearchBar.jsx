@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search'
 import IconButton from '@material-ui/core/IconButton'
 
@@ -14,11 +14,6 @@ export default function BookSearchBar (props) {
     const book = e.target.value
     setBook(book)
   }
-  // ISBN:
-  // https://www.googleapis.com/books/v1/volumes?q=isbn:9781448823734&maxResults=1
-
-  // ID:
-  // https://www.googleapis.com/books/v1/volumes?q=id:gx4O4kpbCd8C&maxResults=1
 
   function handleSubmit (e) {
     e.preventDefault()
@@ -39,16 +34,23 @@ export default function BookSearchBar (props) {
 
   return (
     <>
-      <form className="search-bar"onSubmit={handleSubmit}>
+      <form className='search-bar' style={{ borderColor: '#ff4400' }} onSubmit={handleSubmit}>
         <input
           type='text'
           onChange={handleChange}
           className='searchbar search-font'
           placeholder='Search for books'
           autoComplete='off'
+          style={{ color: '#ff4400' }}
         />
-        <IconButton type='submit'> <SearchIcon /></IconButton>
+        <IconButton type='submit'> <SearchIcon style={{ color: '#ff4400' }} /></IconButton>
       </form>
     </>
   )
 }
+
+// ISBN:
+// https://www.googleapis.com/books/v1/volumes?q=isbn:9781448823734&maxResults=1
+
+// ID:
+// https://www.googleapis.com/books/v1/volumes?q=id:gx4O4kpbCd8C&maxResults=1
