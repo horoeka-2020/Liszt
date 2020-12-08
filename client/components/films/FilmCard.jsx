@@ -50,6 +50,7 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
   }
 
   const handleRemoveFilm = () => {
+    console.log(filmApiId)
     const film = {
       filmApiId
     }
