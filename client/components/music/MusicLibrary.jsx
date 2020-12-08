@@ -2,20 +2,20 @@ import React from 'react'
 
 import 'materialize-css/dist/css/materialize.min.css'
 import MusicCard from './MusicCard'
-// import { getMusicList } from '../../apis/music'
+import { getMusicList } from '../../apis/music'
 
 class MusicLibrary extends React.Component {
   state = {
     musics: []
   }
 
-  // componentDidMount() {
-  //   getMusicList(8).then((musics) =>
-  //     this.setState({
-  //       musics: musics
-  //     })
-  //   )
-  // }
+  componentDidMount() {
+    getMusicList(8).then((musics) =>
+      this.setState({
+        musics: musics.songs
+      })
+    )
+  }
 
   refreshList = (musics) => {
     this.setState({
@@ -29,12 +29,13 @@ class MusicLibrary extends React.Component {
         {this.state.musics.map((music) => {
           return (
             <MusicCard
-              title={music.Title}
-              image={music.Poster}
-              filmApiId={music.imdbID}
+              title={music.title}
+              image={music.image}
+              musicApiId={music.musicApiId}
               refreshList={this.refreshList}
-              key={music.imdbID}
-              year={music.Year}
+              key={music.musicApiId}
+              artist={music.artist}
+              album={music.album}
             />
           )
         })}

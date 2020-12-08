@@ -1,14 +1,15 @@
 import request from 'superagent'
 
-export const getBookList = (user) => {
+export const getMusicList = (user) => {
   const hardCodedUserId = 1
-  return request.get(`/api/v1/musics/${hardCodedUserId}`).then((res) => {
+  return request.get(`/api/v1/music/${hardCodedUserId}`).then((res) => {
     console.log(res)
     return res.body
   })
 }
 
 export const postMusicToList = (newMusic) => {
+  console.log(newMusic)
   const hardCodedUserId = 1
   const { image, musicApiId, title, artist, album } = newMusic
   const musicDetails = {
@@ -18,7 +19,6 @@ export const postMusicToList = (newMusic) => {
     songApiId: musicApiId,
     album: album,
     title: title
-
   }
   return request
     .post('/api/v1/music/')
@@ -34,7 +34,7 @@ export const delMusicFromList = (musicApiId) => {
   const musicDetails = {
     userId: hardCodedUserId,
     // need a property?
-    musicApiId: musicApiId.isbn
+    musicApiId: musicApiId.musicApiId
   }
   return request
     .delete()

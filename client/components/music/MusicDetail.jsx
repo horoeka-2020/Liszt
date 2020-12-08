@@ -15,7 +15,7 @@ import {
 import clsx from 'clsx'
 import { red } from '@material-ui/core/colors'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-// import { postMusicToList } from '../../apis/music'
+import { postMusicToList } from '../../apis/music'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,8 +67,6 @@ const MusicDetail = ({
     console.log('newMusic', newMusic)
     postMusicToList(newMusic)
 
-    // resetResults()
-    console.log(history)
     history.push('/musiclist')
   }
 
