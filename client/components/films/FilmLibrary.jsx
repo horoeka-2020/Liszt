@@ -12,7 +12,7 @@ class FilmLibrary extends React.Component {
   componentDidMount() {
     getFilmList(8).then((films) =>
       this.setState({
-        films: films
+        films: films.films
       })
     )
   }
