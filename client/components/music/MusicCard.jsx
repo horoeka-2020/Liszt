@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const MusicCard = ({ filmApiId, title, year, imageUrl, refreshList }) => {
+const MusicCard = ({ musicApiId, title, album, image, refreshList }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
@@ -49,9 +49,9 @@ const MusicCard = ({ filmApiId, title, year, imageUrl, refreshList }) => {
     setExpanded(!expanded)
   }
 
-  const handleRemoveFilm = () => {
-    const film = {
-      filmApiId
+  const handleRemoveMusic = () => {
+    const music = {
+      musicApiId
     }
     delMusicFromList(music).then((musics) => {
       refreshList(musics)
@@ -59,12 +59,12 @@ const MusicCard = ({ filmApiId, title, year, imageUrl, refreshList }) => {
   }
 
   return (
-    <Card className={classes.root}>
+    <Card className='card'>
       <CardHeader />
       <CardMedia
-        className={classes.media}
-        image={image === undefined ? '' : `${image}`}
-        key={filmApiId}
+        className='image'
+        image={image}
+        key={musicApiId}
       />
 
       <CardActions disableSpacing>
@@ -82,7 +82,8 @@ const MusicCard = ({ filmApiId, title, year, imageUrl, refreshList }) => {
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography paragraph>{title}</Typography>
-          <IconButton aria-label='remove from list' onClick={handleRemoveFilm}>
+          <Typography paragraph>{album}</Typography>
+          <IconButton aria-label='remove from list' onClick={handleRemoveMusic}>
             <DeleteForeverTwoToneIcon />
           </IconButton>
         </CardContent>

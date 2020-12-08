@@ -9,7 +9,7 @@ class MusicLibrary extends React.Component {
     musics: []
   }
 
-  componentDidMount() {
+  componentDidMount () {
     getMusicList(8).then((musics) =>
       this.setState({
         musics: musics.songs
@@ -23,14 +23,14 @@ class MusicLibrary extends React.Component {
     })
   }
 
-  render() {
+  render () {
     return (
       <div>
         {this.state.musics.map((music) => {
           return (
             <MusicCard
               title={music.title}
-              image={music.image}
+              image={music.imageUrl}
               musicApiId={music.musicApiId}
               refreshList={this.refreshList}
               key={music.musicApiId}
