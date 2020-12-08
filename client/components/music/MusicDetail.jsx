@@ -40,7 +40,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const MusicDetail = ({ artist, image, album, resetResults, history, id }) => {
+const MusicDetail = ({
+  artist,
+  image,
+  album,
+  resetResults,
+  history,
+  id,
+  title
+}) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
@@ -53,7 +61,8 @@ const MusicDetail = ({ artist, image, album, resetResults, history, id }) => {
       image,
       id,
       artist,
-      album
+      album,
+      title
     }
     console.log('newMusic', newMusic)
     postMusicToList(newMusic)
@@ -65,13 +74,13 @@ const MusicDetail = ({ artist, image, album, resetResults, history, id }) => {
 
   return (
     <Card className={classes.root}>
-      <CardHeader title={artist} subheader={album} />
+      <CardHeader title={title} subheader={artist} />
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
         alt={album}
         id={id}
-        title={artist}
+        // title={artist === undefined ? '' : `${artist}`}
       />
 
       <CardActions disableSpacing>
@@ -92,7 +101,7 @@ const MusicDetail = ({ artist, image, album, resetResults, history, id }) => {
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>{album}</Typography>
+          <Typography paragraph>Album: {album}</Typography>
         </CardContent>
       </Collapse>
     </Card>

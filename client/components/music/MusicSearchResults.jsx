@@ -10,6 +10,7 @@ const MusicSearchResults = (props) => {
         <MusicDetail
           id={music.id}
           artist={music.artist.name}
+          title={music.title}
           image={music.album.cover}
           album={music.album.title}
           history={props.history}
