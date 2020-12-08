@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
 import clsx from 'clsx'
 
-// import { delMusicFromList } from '../../apis/music'
+import { delMusicFromList } from '../../apis/music'
 
 const useStyles = makeStyles((theme) => ({
   root: {
