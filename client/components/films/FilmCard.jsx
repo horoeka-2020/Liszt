@@ -59,10 +59,13 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
   }
 
   return (
-    <Card className={classes.root}>
+    <Card
+      className='card'
+      style={{ backgroundColor: 'transparent', borderRadius: '30px' }}
+    >
       <CardHeader />
       <CardMedia
-        className={classes.media}
+        className='image'
         image={image === undefined ? '' : `${image}`}
         key={filmApiId}
       />
@@ -82,6 +85,7 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography paragraph>{title}</Typography>
+          <Typography paragraph>{year}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveFilm}>
             <DeleteForeverTwoToneIcon />
           </IconButton>
