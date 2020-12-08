@@ -33,17 +33,18 @@ export default function MusicSearchBar(props) {
 
   return (
     <>
-      <form className='search-bar' onSubmit={handleSubmit}>
+      <form className='search-bar' style={{ borderColor: '#ff4fc4' }} onSubmit={handleSubmit}>
         <input
           type='text'
           onChange={handleChange}
           className='searchbar search-font'
-          placeholder='Search for books'
+          placeholder='Search for music'
           autoComplete='off'
+          style={{ color: '#ff4fc4' }}
         />
         <IconButton type='submit'>
           {' '}
-          <SearchIcon />
+          <SearchIcon style={{ color: '#ff4fc4' }}/>
         </IconButton>
       </form>
     </>

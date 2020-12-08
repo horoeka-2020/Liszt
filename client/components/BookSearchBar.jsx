@@ -43,7 +43,9 @@ export default function BookSearchBar (props) {
           autoComplete='off'
           style={{ color: '#ff4400' }}
         />
-        <IconButton type='submit'> <SearchIcon style={{ color: '#ff4400' }} /></IconButton>
+        <IconButton type='submit'> 
+        <SearchIcon style={{ color: '#ff4400' }} />
+        </IconButton>
       </form>
     </>
   )
