@@ -23,7 +23,6 @@ const SearchResults = (props) => {
               ? ''
               : book.volumeInfo.industryIdentifiers[0].identifier
           }
-          // resetResults={props.resetResults}
           history={props.history}
         />
       ))}

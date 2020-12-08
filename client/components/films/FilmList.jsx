@@ -19,11 +19,7 @@ const FilmList = (props) => {
         exact
         path='/filmlist/searchresults'
         render={() => (
-          <FilmSearchResults
-            result={result}
-            // resetResults={resetResults}
-            history={props.history}
-          />
+          <FilmSearchResults result={result} history={props.history} />
         )}
       />
     </div>

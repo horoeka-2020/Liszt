@@ -1,7 +1,17 @@
 import React from 'react'
 
 import AddCircleIcon from '@material-ui/icons/AddCircle'
-import { makeStyles, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography } from '@material-ui/core/'
+import {
+  makeStyles,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  IconButton,
+  Typography
+} from '@material-ui/core/'
 import clsx from 'clsx'
 import { red } from '@material-ui/core/colors'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -58,22 +68,13 @@ const BookDetail = ({
     console.log(newBook)
     postBookToList(newBook)
 
-    // resetResults()
     console.log(history)
     history.push('/booklist')
   }
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-        // action={
-        //   <IconButton aria-label='settings'>
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
-        title={title}
-        subheader={author}
-      />
+      <CardHeader title={title} subheader={author} />
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}

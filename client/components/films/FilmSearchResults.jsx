@@ -11,8 +11,8 @@ const FilmSearchResults = (props) => {
           key={film.imdbID}
           Title={film.Title}
           Poster={film.Poster}
-          imdbID={film.imdbID}
-          // resetResults={props.resetResults}
+          filmApiId={film.imdbID}
+          Year={film.Year}
           history={props.history}
         />
       ))}

@@ -31,7 +31,7 @@ class FilmLibrary extends React.Component {
             <FilmCard
               title={film.Title}
               image={film.Poster}
-              imdbID={film.imdbID}
+              filmApiId={film.imdbID}
               refreshList={this.refreshList}
               key={film.imdbID}
               year={film.Year}

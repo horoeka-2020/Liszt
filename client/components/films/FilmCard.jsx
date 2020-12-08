@@ -1,6 +1,16 @@
 import React from 'react'
 
-import { makeStyles, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography } from '@material-ui/core/'
+import {
+  makeStyles,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  IconButton,
+  Typography
+} from '@material-ui/core/'
 import { red } from '@material-ui/core/colors'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
@@ -33,13 +43,11 @@ const useStyles = makeStyles((theme) => ({
 
 const FilmCard = ({
   title,
-  year,
   refreshList,
   director,
-  plot,
   runningTime,
   image,
-  filmApiId// imdbId
+  filmApiId // imdbId
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -52,16 +60,14 @@ const FilmCard = ({
     const film = {
       filmApiId
     }
-    delFilmFromList(film)
-      .then((films) => {
-        refreshList(films)
-      })
+    delFilmFromList(film).then((films) => {
+      refreshList(films)
+    })
   }
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-      />
+      <CardHeader />
       <CardMedia
         className={classes.media}
         image={image === undefined ? '' : `${image}`}
@@ -69,7 +75,6 @@ const FilmCard = ({
       />
 
       <CardActions disableSpacing>
-
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded

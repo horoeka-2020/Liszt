@@ -13,10 +13,10 @@ export const postFilmToList = (newFilm) => {
 
   console.log('nF', newFilm)
   const hardCodedUserId = 1
-  const { imdbID, Title, Year, Poster } = newFilm // different data and newFilm
+  const { filmApiId, Title, Year, Poster } = newFilm // different data and newFilm
   const filmDetails = {
     userId: hardCodedUserId,
-    filmApiId: imdbID,
+    filmApiId: filmApiId,
     title: Title,
     year: Year,
     imageUrl: Poster

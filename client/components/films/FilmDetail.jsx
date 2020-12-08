@@ -44,11 +44,9 @@ const FilmDetail = ({
   Title,
   Year,
   Poster,
-  Director,
-  Plot,
   resetResults,
   history,
-  imdbID
+  filmApiId
 }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
@@ -59,13 +57,12 @@ const FilmDetail = ({
 
   const handleAddFilm = () => {
     const newFilm = {
-      image,
-      isbn,
-      title,
-      description,
-      author
+      Poster,
+      filmApiId,
+      Title,
+      Year
     }
-    console.log(newFilm)
+    console.log('newFilm', newFilm)
     postFilmToList(newFilm)
 
     // resetResults()
@@ -75,21 +72,12 @@ const FilmDetail = ({
 
   return (
     <Card className={classes.root}>
-      <CardHeader
-        // action={
-        //   <IconButton aria-label='settings'>
-        //     <MoreVertIcon />
-        //   </IconButton>
-        // }
-        title={Title}
-        subheader={Director}
-        subheader={Year}
-      />
+      <CardHeader title={Title} subheader={Year} />
       <CardMedia
         className={classes.media}
         image={Poster === undefined ? '' : `${Poster}`}
         alt={Title}
-        key={imdbID}
+        // key={filmApiId}
         title={Title}
       />
 
@@ -111,7 +99,7 @@ const FilmDetail = ({
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>{Plot}</Typography>
+          <Typography paragraph>{Title}</Typography>
         </CardContent>
       </Collapse>
     </Card>

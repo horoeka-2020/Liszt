@@ -18,13 +18,7 @@ const BookList = (props) => {
       <Route
         exact
         path='/booklist/searchresults'
-        render={() => (
-          <SearchResults
-            result={result}
-            // resetResults={resetResults}
-            history={props.history}
-          />
-        )}
+        render={() => <SearchResults result={result} history={props.history} />}
       />
     </div>
   )
