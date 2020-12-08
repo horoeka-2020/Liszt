@@ -19,6 +19,7 @@ import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import { postBookToList } from '../apis/books'
+import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles((theme) => ({
   // root: {
@@ -84,7 +85,7 @@ const BookDetail = ({
 
   return (
     <Card className="card"
-      style={{ backgroundColor: 'transparent', borderRadius: '30px' }}>
+      style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#8b2eff' }}>
 
       <Typography
         style={{ fontFamily: 'rubik', fontSize: '27px', color: '#8b2eff', textAlign: 'center' }} title>{title}</Typography>
@@ -122,11 +123,11 @@ const BookDetail = ({
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon />
+          <ExpandMoreIcon style={{ color: '#8b2eff', fontSize: '45' }} />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent style={{padding: '0' }}>
+        <CardContent style={{ padding: '0' }}>
           <Typography
             style={{ fontFamily: 'rubik', fontSize: '1rem', color: '#8b2eff', textAlign: 'center' }} paragraph>{description}</Typography>
         </CardContent>

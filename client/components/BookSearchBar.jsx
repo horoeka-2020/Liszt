@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SearchIcon from '@material-ui/icons/Search'
 import IconButton from '@material-ui/core/IconButton'
 
@@ -9,6 +9,10 @@ export default function BookSearchBar (props) {
   const [apiKey, setApiKey] = useState(
     'AIzaSyCnNZoJRVKldJLWrQ4A5DFRBtRud30H4jw'
   )
+
+  useEffect(() => {
+
+  }, [])
 
   function handleChange (e) {
     const book = e.target.value
@@ -47,7 +51,7 @@ export default function BookSearchBar (props) {
           placeholder='Search for books'
           autoComplete='off'
         />
-        <IconButton type='submit'> <SearchIcon /></IconButton>
+        <IconButton type='submit'> <SearchIcon style={{ color: '#ff4400' }} /></IconButton>
       </form>
     </>
   )
