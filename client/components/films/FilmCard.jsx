@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const FilmCard = ({ filmApiId, title, year, imageUrl, refreshList }) => {
+const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 

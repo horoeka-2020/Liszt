@@ -6,10 +6,10 @@ const router = express.Router()
 
 router.get('/:userId', (req, res) => {
   db.getUserFilmsList(req.params.userId)
-    .then(filmz => {
-      return res.json({ filmz })
+    .then((films) => {
+      return res.json({ films })
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({ error: err.message })
     })
 })
@@ -23,20 +23,20 @@ router.post('/', (req, res) => {
       res.json(films)
       return null
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({ error: err.message })
     })
 })
 
 router.delete('/', (req, res) => {
-  const { filmApiId, userId } = (req.body)
+  const { filmApiId, userId } = req.body
   db.removeFilmsFromFilmList(filmApiId, userId)
     .then(() => db.getUserFilmsList(userId))
     .then((films) => {
       res.json(films)
       return null
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json({ error: err.message })
     })
 })
