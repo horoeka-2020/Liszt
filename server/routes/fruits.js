@@ -10,7 +10,7 @@ const router = express.Router()
 //     })
 //     .catch((err) => {
 
-//       res.status(500).json({ message: 'Somthing went wrong' })
+//
 //     })
 // })
 
