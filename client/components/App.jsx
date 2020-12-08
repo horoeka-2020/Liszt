@@ -8,9 +8,11 @@ import BookList from './BookList'
 import SearchResults from './SearchResults'
 import FilmSearchBar from './films/FilmSearchBar'
 import FilmList from './films/FilmList'
+import MusicList from './music/MusicList'
+import MusicSearchBar from './music/MusicSearchBar'
 
 export class App extends React.Component {
-  render () {
+  render() {
     return (
       <div className='app'>
         <Header path='/' />
@@ -19,7 +21,8 @@ export class App extends React.Component {
         <Route exact path='/home' component={Home} />
         <Route path='/booklist' component={BookList} />
         <Route path='/filmlist' component={FilmList} />
-        {/* <Route exact path='/filmsearch' component={FilmSearchBar} /> */}
+        <Route path='/musiclist' component={MusicList} />
+        <Route exact path='/musicsearch' component={MusicSearchBar} />
       </div>
     )
   }
