@@ -1,6 +1,16 @@
 import React from 'react'
 
-import { makeStyles, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, IconButton, Typography } from '@material-ui/core/'
+import {
+  makeStyles,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  IconButton,
+  Typography
+} from '@material-ui/core/'
 import { red } from '@material-ui/core/colors'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import DeleteForeverTwoToneIcon from '@material-ui/icons/DeleteForeverTwoTone'
@@ -10,18 +20,6 @@ import { delBookFromList } from '../apis/books'
 import { FullscreenExit } from '@material-ui/icons'
 
 const useStyles = makeStyles((theme) => ({
-  // root: {
-  //   maxWidth: 345,
-  //   display: flex,
-  // },
-  // media: {
-  //   height: 400,
-  //   width: 260,
-  //   justifyContent: center,
-  //   display: flex,
-  //   // paddingTop: '56.25%' // 16:9
-  // },
-
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -37,14 +35,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const BookCard = ({
-  key,
-  image,
-  refreshList,
-  isbn,
-  title,
-  author
-}) => {
+const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
@@ -56,25 +47,36 @@ const BookCard = ({
     const book = {
       isbn
     }
-    delBookFromList(book)
-      .then((books) => {
-        refreshList(books)
-      })
+    delBookFromList(book).then((books) => {
+      refreshList(books)
+    })
   }
 
   return (
+<<<<<<< HEAD
     <Card className="card"
       style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#ff4400' }}>
       <CardHeader
       />
+=======
+    <Card
+      className='card'
+      style={{ backgroundColor: 'transparent', borderRadius: '30px' }}
+    >
+      <CardHeader />
+>>>>>>> 4489ab13cd7e4d5c2966e79d0617a85e47f52e89
       <CardMedia
-        className="image"
+        className='image'
         image={image === undefined ? '' : `${image}`}
         key={key}
       />
 
+<<<<<<< HEAD
       <CardActions style={{ padding: '0' }}disableSpacing>
 
+=======
+      <CardActions disableSpacing>
+>>>>>>> 4489ab13cd7e4d5c2966e79d0617a85e47f52e89
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded
@@ -89,10 +91,36 @@ const BookCard = ({
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent style={{ padding: '0' }}>
           <Typography
+<<<<<<< HEAD
             style={{ fontFamily: 'rubik', fontSize: '27px', color: '#ff4400', textAlign: 'center' }} paragraph>{title}</Typography>
           <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#ff4400', textAlign: 'center' }}paragraph>{author}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveBook} style={{ paddingTop: '0' }}>
             <DeleteForeverTwoToneIcon style={{ color: '#ff4400', fontSize: '27' }} />
+=======
+            style={{
+              fontFamily: 'rubik',
+              fontSize: '27px',
+              color: '#8b2eff',
+              textAlign: 'center'
+            }}
+            paragraph
+          >
+            {title}
+          </Typography>
+          <Typography
+            style={{
+              fontFamily: 'rubik',
+              fontSize: '19px',
+              color: '#8b2eff',
+              textAlign: 'center'
+            }}
+            paragraph
+          >
+            {author}
+          </Typography>
+          <IconButton aria-label='remove from list' onClick={handleRemoveBook}>
+            <DeleteForeverTwoToneIcon />
+>>>>>>> 4489ab13cd7e4d5c2966e79d0617a85e47f52e89
           </IconButton>
         </CardContent>
       </Collapse>

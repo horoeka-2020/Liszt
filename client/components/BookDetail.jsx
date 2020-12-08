@@ -1,23 +1,20 @@
-import { Book } from '@material-ui/icons'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 import AddCircleIcon from '@material-ui/icons/AddCircle'
-import { makeStyles } from '@material-ui/core/styles'
+import {
+  makeStyles,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Collapse,
+  IconButton,
+  Typography
+} from '@material-ui/core/'
 import clsx from 'clsx'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardContent from '@material-ui/core/CardContent'
-import CardActions from '@material-ui/core/CardActions'
-import Collapse from '@material-ui/core/Collapse'
-import Avatar from '@material-ui/core/Avatar'
-import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
 import { red } from '@material-ui/core/colors'
-import ShareIcon from '@material-ui/icons/Share'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
 import { postBookToList } from '../apis/books'
 import Fade from '@material-ui/core/Fade'
 
@@ -78,7 +75,6 @@ const BookDetail = ({
     console.log(newBook)
     postBookToList(newBook)
 
-    // resetResults()
     console.log(history)
     history.push('/booklist')
   }
@@ -136,15 +132,5 @@ const BookDetail = ({
 
   )
 }
-
-// const BookDetail = ({ key, alt, image }) => {
-//   // const book = props.book
-
-//   return (
-//     <div>
-//       <img src={image === undefined ? '' : `${image}`} alt={alt} key={key} />
-//     </div>
-//   )
-//  }
 
 export default BookDetail
