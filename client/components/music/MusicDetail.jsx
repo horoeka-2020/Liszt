@@ -18,13 +18,13 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { postMusicToList } from '../../apis/music'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345
+  // },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '56.25%' // 16:9
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -71,19 +71,25 @@ const MusicDetail = ({
   }
 
   return (
-    <Card className={classes.root}>
-      <CardHeader title={title} subheader={artist} />
+    <Card className="card image-size"
+      style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#8b2eff' }}>
+
+<Typography
+        style={{ fontFamily: 'rubik', fontSize: '27px', color: '#8b2eff', textAlign: 'center' }} title>{title}</Typography>
+      <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#8b2eff', textAlign: 'center' }}subheader>{artist}</Typography>
+
+      {/* <CardHeader title={title} subheader={artist} /> */}
       <CardMedia
-        className={classes.media}
+        className='image'
         image={image === undefined ? '' : `${image}`}
         alt={album}
         id={id}
         // title={artist === undefined ? '' : `${artist}`}
       />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ justifyContent: 'center', padding: '0' }} disableSpacing>
         <IconButton aria-label='add to list' onClick={handleAddMusic}>
-          <AddCircleIcon />
+          <AddCircleIcon style={{ color: '#8b2eff', fontSize: '45' }} />
         </IconButton>
 
         <IconButton
@@ -94,12 +100,12 @@ const MusicDetail = ({
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon />
+          <ExpandMoreIcon style={{ color: '#8b2eff', fontSize: '45' }} />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
-          <Typography paragraph>Album: {album}</Typography>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '1rem', color: '#8b2eff', textAlign: 'center' }} paragraph>Album: {album}</Typography>
         </CardContent>
       </Collapse>
     </Card>

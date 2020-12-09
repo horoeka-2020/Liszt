@@ -11,7 +11,7 @@ const MusicSearchResults = (props) => {
           id={music.id}
           artist={music.artist.name}
           title={music.title}
-          image={music.album.cover}
+          image={music.album.cover_big}
           album={music.album.title}
           history={props.history}
         />

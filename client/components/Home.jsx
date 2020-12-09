@@ -21,7 +21,9 @@ export class Home extends React.Component {
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-size button-center button-font button-style is-rounded music-button'>MUSIC</button>
+            <Link to='/musiclist'>
+              <button className='button button-size button-center button-font button-style is-rounded music-button'>MUSIC</button>
+            </Link>
           </div>
         </div>
       </section>

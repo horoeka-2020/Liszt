@@ -19,13 +19,13 @@ import clsx from 'clsx'
 import { delFilmFromList } from '../../apis/films'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345
+  // },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '56.25%' // 16:9
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -61,7 +61,7 @@ const FilmCard = ({ filmApiId, title, year, image, refreshList }) => {
 
   return (
     <Card
-      className='card'
+      className='card image-size'
       style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#2652ff' }}
     >
       <CardHeader />

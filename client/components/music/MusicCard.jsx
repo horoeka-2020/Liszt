@@ -19,13 +19,13 @@ import clsx from 'clsx'
 import { delMusicFromList } from '../../apis/music'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 345
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%' // 16:9
-  },
+  // root: {
+  //   maxWidth: 345
+  // },
+  // media: {
+  //   height: 0,
+  //   paddingTop: '56.25%' // 16:9
+  // },
   expand: {
     transform: 'rotate(0deg)',
     marginLeft: 'auto',
@@ -66,11 +66,11 @@ const MusicCard = ({
   }
 
   return (
-    <Card className='card'>
+    <Card className='card image-size' style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#ff4fc4' }}>
       <CardHeader />
       <CardMedia className='image' image={image} key={musicApiId} />
 
-      <CardActions disableSpacing>
+      <CardActions style={{ padding: '0' }} disableSpacing>
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded
@@ -79,16 +79,16 @@ const MusicCard = ({
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon />
+          <ExpandMoreIcon style={{ color: '#ff4fc4', fontSize: '45' }}/>
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
-        <CardContent>
-          <Typography paragraph>{title}</Typography>
-          <Typography paragraph>{artist}</Typography>
-          <Typography paragraph>Album: {album}</Typography>
-          <IconButton aria-label='remove from list' onClick={handleRemoveMusic}>
-            <DeleteForeverTwoToneIcon />
+        <CardContent style={{ padding: '0' }}>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '27px', color: '#ff4fc4', textAlign: 'center' }} paragraph>{title}</Typography>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#ff4fc4', textAlign: 'center' }} paragraph>{artist}</Typography>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#ff4fc4', textAlign: 'center' }} paragraph>Album: {album}</Typography>
+          <IconButton aria-label='remove from list' onClick={handleRemoveMusic} style={{ paddingTop: '0' }}>
+            <DeleteForeverTwoToneIcon style={{ color: '#ff4fc4', fontSize: '27' }}/>
           </IconButton>
         </CardContent>
       </Collapse>

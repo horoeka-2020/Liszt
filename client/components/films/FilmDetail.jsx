@@ -71,7 +71,7 @@ const FilmDetail = ({
   }
 
   return (
-    <Card className="card"
+    <Card className="card image-size"
       style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#8b2eff' }}>
 
       <Typography

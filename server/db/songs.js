@@ -10,6 +10,7 @@ function getUserSongsList (userId, db = connection) {
   return db('song_list')
     .where('user_id', userId)
     .select('id', 'user_id as userId', 'image_url as imageUrl', 'title', 'artist', 'album', 'song_api_id as songApiId')
+    .orderBy('id', 'desc')
 }
 
 function addSongsToSongList (newSong, db = connection) {

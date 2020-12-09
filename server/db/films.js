@@ -7,7 +7,10 @@ module.exports = {
 }
 
 function getUserFilmsList (userId, db = connection) {
-  return db('film_list').where('user_id', userId).select('id', 'user_id as userId', 'film_api_id as filmApiId', 'title', 'year', 'image_url as imageUrl')
+  return db('film_list')
+    .where('user_id', userId)
+    .select('id', 'user_id as userId', 'film_api_id as filmApiId', 'title', 'year', 'image_url as imageUrl')
+    .orderBy('id', 'desc')
 }
 
 function addFilmsToFilmList (newFilm, db = connection) {
