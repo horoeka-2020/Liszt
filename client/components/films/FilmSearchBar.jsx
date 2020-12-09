@@ -4,16 +4,16 @@ import IconButton from '@material-ui/core/IconButton'
 
 import axios from 'axios'
 
-export default function FilmSearchBar (props) {
+export default function FilmSearchBar(props) {
   const [film, setFilm] = useState('')
   const [apiKey, setApiKey] = useState('39cd8914')
 
-  function handleChange (e) {
+  function handleChange(e) {
     const film = e.target.value
     setFilm(film)
   }
 
-  function handleSubmit (e) {
+  function handleSubmit(e) {
     e.preventDefault()
 
     axios
@@ -30,12 +30,16 @@ export default function FilmSearchBar (props) {
 
   return (
     <>
-      <form className='search-bar' style={{ borderColor: '#2652ff' }} onSubmit={handleSubmit}>
+      <form
+        className='search-bar'
+        style={{ borderColor: '#2652ff' }}
+        onSubmit={handleSubmit}
+      >
         <input
           type='text'
           onChange={handleChange}
           className='searchbar search-font'
-          placeholder='Search for movies'
+          placeholder='Search for films'
           autoComplete='off'
           style={{ color: '#2652ff' }}
         />
