@@ -1,13 +1,18 @@
-$primary: pink;
+// $primary: pink;
 
 @import "bulma/bulma.sass";
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 
 html, 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  background-color: #ebdbff;
 }
 
 // Components
 @import "components/header";
-@import "components/buttons"
+@import "components/buttons";
+@import "components/body";
+@import "components/font";
+@import "components/searchbar";
+@import "components/bookcard"

@@ -1,27 +1,29 @@
-import { Container } from '@material-ui/core'
 import React from 'react'
-import BookList from './BookList'
 import { Link } from 'react-router-dom'
 
 export class Home extends React.Component {
-  render() {
+  render () {
     return (
-      <section className='container'>
+      <section className='container body'>
         <div className='columns'>
           <div className='column is-full'>
             <Link to='/booklist'>
-              <button className='button button-center is-primary'>Books</button>
+              <button className='button button-size button-center button-font button-style is-rounded book-button'>BOOKS</button>
             </Link>
           </div>
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-center'>Music</button>
+            <Link to='/filmlist'>
+              <button className='button button-size button-center button-font button-style is-rounded film-button'>FILM</button>
+            </Link>
           </div>
         </div>
         <div className='columns'>
           <div className='column is-full'>
-            <button className='button button-center'>Movies</button>
+            <Link to='/musiclist'>
+              <button className='button button-size button-center button-font button-style is-rounded music-button'>MUSIC</button>
+            </Link>
           </div>
         </div>
       </section>
