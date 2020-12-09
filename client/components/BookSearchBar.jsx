@@ -20,7 +20,7 @@ export default function BookSearchBar(props) {
 
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=10`
+        `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=5`
       )
       .then((data) => {
         props.setResult(data.data.items)

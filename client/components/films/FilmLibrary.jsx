@@ -34,7 +34,7 @@ class FilmLibrary extends React.Component {
               image={film.imageUrl}
               filmApiId={film.filmApiId}
               refreshList={this.refreshList}
-              key={film.imdbID}
+              key={film.filmApiId}
               year={film.year}
             />
           )

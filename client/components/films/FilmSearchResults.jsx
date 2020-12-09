@@ -1,8 +1,6 @@
 import React from 'react'
 import FilmDetail from './FilmDetail'
 
-// search returns an object. how to 'map' (obviously not map.) over object?
-
 const FilmSearchResults = (props) => {
   return (
     <div>

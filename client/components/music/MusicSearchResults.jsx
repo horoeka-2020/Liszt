@@ -1,8 +1,6 @@
 import React from 'react'
 import MusicDetail from './MusicDetail'
 
-// search returns an object. how to 'map' (obviously not map.) over object?
-
 const MusicSearchResults = (props) => {
   return (
     <div>
@@ -14,6 +12,7 @@ const MusicSearchResults = (props) => {
           image={music.album.cover_big}
           album={music.album.title}
           history={props.history}
+          key={music.id}
         />
       ))}
     </div>

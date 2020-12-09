@@ -19,7 +19,7 @@ const SearchResults = (props) => {
           }
           description={book.volumeInfo.description}
           isbn={
-            book.volumeInfo.industryIdentifiers[0] === undefined
+            book.volumeInfo.industryIdentifiers === undefined
               ? ''
               : book.volumeInfo.industryIdentifiers[0].identifier
           }

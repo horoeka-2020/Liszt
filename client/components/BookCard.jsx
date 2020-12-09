@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
+const BookCard = ({ image, refreshList, isbn, title, author }) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
@@ -53,18 +53,22 @@ const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
   }
 
   return (
-    <Card className="card image-size"
-      style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#ff4400' }}>
-      <CardHeader
-      />
+    <Card
+      className='card image-size'
+      style={{
+        backgroundColor: 'transparent',
+        borderRadius: '30px',
+        borderColor: '#ff4400'
+      }}
+    >
+      <CardHeader />
       <CardMedia
         className='image'
         image={image === undefined ? '' : `${image}`}
-        key={key}
+        // key={key}
       />
 
       <CardActions style={{ padding: '0' }} disableSpacing>
-
         <IconButton
           className={clsx(classes.expand, {
             [classes.expandOpen]: expanded
@@ -73,16 +77,41 @@ const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
           aria-expanded={expanded}
           aria-label='show more'
         >
-          <ExpandMoreIcon style={{ color: '#ff4400', fontSize: '45' }}/>
+          <ExpandMoreIcon style={{ color: '#ff4400', fontSize: '45' }} />
         </IconButton>
       </CardActions>
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent style={{ padding: '0' }}>
           <Typography
-            style={{ fontFamily: 'rubik', fontSize: '27px', color: '#ff4400', textAlign: 'center' }} paragraph>{title}</Typography>
-          <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#ff4400', textAlign: 'center' }} paragraph>{author}</Typography>
-          <IconButton aria-label='remove from list' onClick={handleRemoveBook} style={{ paddingTop: '0' }}>
-            <DeleteForeverTwoToneIcon style={{ color: '#ff4400', fontSize: '27' }} />
+            style={{
+              fontFamily: 'rubik',
+              fontSize: '27px',
+              color: '#ff4400',
+              textAlign: 'center'
+            }}
+            paragraph
+          >
+            {title}
+          </Typography>
+          <Typography
+            style={{
+              fontFamily: 'rubik',
+              fontSize: '19px',
+              color: '#ff4400',
+              textAlign: 'center'
+            }}
+            paragraph
+          >
+            {author}
+          </Typography>
+          <IconButton
+            aria-label='remove from list'
+            onClick={handleRemoveBook}
+            style={{ paddingTop: '0' }}
+          >
+            <DeleteForeverTwoToneIcon
+              style={{ color: '#ff4400', fontSize: '27' }}
+            />
           </IconButton>
         </CardContent>
       </Collapse>
