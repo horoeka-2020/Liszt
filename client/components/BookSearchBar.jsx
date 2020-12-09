@@ -4,18 +4,18 @@ import IconButton from '@material-ui/core/IconButton'
 
 import axios from 'axios'
 
-export default function BookSearchBar (props) {
+export default function BookSearchBar(props) {
   const [book, setBook] = useState('')
   const [apiKey, setApiKey] = useState(
     'AIzaSyCnNZoJRVKldJLWrQ4A5DFRBtRud30H4jw'
   )
 
-  function handleChange (e) {
+  function handleChange(e) {
     const book = e.target.value
     setBook(book)
   }
 
-  function handleSubmit (e) {
+  function handleSubmit(e) {
     e.preventDefault()
 
     axios
@@ -34,7 +34,11 @@ export default function BookSearchBar (props) {
 
   return (
     <>
-      <form className='search-bar' style={{ borderColor: '#ff4400' }} onSubmit={handleSubmit}>
+      <form
+        className='search-bar'
+        style={{ borderColor: '#ff4400' }}
+        onSubmit={handleSubmit}
+      >
         <input
           type='text'
           onChange={handleChange}
@@ -43,8 +47,8 @@ export default function BookSearchBar (props) {
           autoComplete='off'
           style={{ color: '#ff4400' }}
         />
-        <IconButton type='submit'> 
-        <SearchIcon style={{ color: '#ff4400' }} />
+        <IconButton type='submit'>
+          <SearchIcon style={{ color: '#ff4400' }} />
         </IconButton>
       </form>
     </>

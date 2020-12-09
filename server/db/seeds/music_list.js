@@ -12,7 +12,8 @@ exports.seed = (knex) => {
           artist: 'Lady Gaga',
           title: 'Always Remember Us This Way',
           album: 'A Star Is Born Soundtrack',
-          image_url: 'https://api.deezer.com/album/74434962/image'
+          image_url:
+            'https://cdns-images.dzcdn.net/images/cover/88a8288e14f61ffa39c14ac2ef9210d8/500x500-000000-80-0-0.jpg'
         }
       ])
     })
