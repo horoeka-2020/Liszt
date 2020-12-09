@@ -1,9 +1,14 @@
 .image {
-  // height: 400px;
-  // width: 260px;
+  height: 400px;
+  width: 260px;
   justify-content: center;
   display: block;
   margin: 0 auto;
+}
+
+.image-size .MuiCardMedia-root {
+  background-size: contain !important;
+
 }
 
 .card {
@@ -15,6 +20,4 @@
   margin-bottom: 20px;
   border-style: solid;
   border-width: 8px;
-  // border-color: #ff4400;
-
 }

@@ -53,7 +53,7 @@ const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
   }
 
   return (
-    <Card className="card"
+    <Card className="card image-size"
       style={{ backgroundColor: 'transparent', borderRadius: '30px', borderColor: '#ff4400' }}>
       <CardHeader
       />
@@ -63,7 +63,7 @@ const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
         key={key}
       />
 
-      <CardActions style={{ padding: '0' }}disableSpacing>
+      <CardActions style={{ padding: '0' }} disableSpacing>
 
         <IconButton
           className={clsx(classes.expand, {
@@ -80,7 +80,7 @@ const BookCard = ({ key, image, refreshList, isbn, title, author }) => {
         <CardContent style={{ padding: '0' }}>
           <Typography
             style={{ fontFamily: 'rubik', fontSize: '27px', color: '#ff4400', textAlign: 'center' }} paragraph>{title}</Typography>
-          <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#ff4400', textAlign: 'center' }}paragraph>{author}</Typography>
+          <Typography style={{ fontFamily: 'rubik', fontSize: '19px', color: '#ff4400', textAlign: 'center' }} paragraph>{author}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveBook} style={{ paddingTop: '0' }}>
             <DeleteForeverTwoToneIcon style={{ color: '#ff4400', fontSize: '27' }} />
           </IconButton>
