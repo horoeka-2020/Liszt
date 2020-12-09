@@ -41,7 +41,14 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const MusicCard = ({ musicApiId, title, album, image, refreshList }) => {
+const MusicCard = ({
+  musicApiId,
+  title,
+  album,
+  image,
+  refreshList,
+  artist
+}) => {
   const classes = useStyles()
   const [expanded, setExpanded] = React.useState(false)
 
@@ -61,11 +68,7 @@ const MusicCard = ({ musicApiId, title, album, image, refreshList }) => {
   return (
     <Card className='card'>
       <CardHeader />
-      <CardMedia
-        className='image'
-        image={image}
-        key={musicApiId}
-      />
+      <CardMedia className='image' image={image} key={musicApiId} />
 
       <CardActions disableSpacing>
         <IconButton
@@ -82,7 +85,8 @@ const MusicCard = ({ musicApiId, title, album, image, refreshList }) => {
       <Collapse in={expanded} timeout='auto' unmountOnExit>
         <CardContent>
           <Typography paragraph>{title}</Typography>
-          <Typography paragraph>{album}</Typography>
+          <Typography paragraph>{artist}</Typography>
+          <Typography paragraph>Album: {album}</Typography>
           <IconButton aria-label='remove from list' onClick={handleRemoveMusic}>
             <DeleteForeverTwoToneIcon />
           </IconButton>
