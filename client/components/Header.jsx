@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className='container '>
       <Link to='/'>
-        <h1 className='header'>LISTGO</h1>
+        <h1 className='header'>LISTGO></h1>
       </Link>
     </header>
   )
