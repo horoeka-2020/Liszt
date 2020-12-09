@@ -29,8 +29,8 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/', (req, res) => {
-  const { songApiId, userId } = (req.body)
-  db.removeSongsFromSongList(songApiId, userId)
+  const { musicApiId, userId } = (req.body)
+  db.removeSongsFromSongList(musicApiId, userId)
     .then(() => db.getUserSongsList(userId))
     .then((songs) => {
       res.json(songs)

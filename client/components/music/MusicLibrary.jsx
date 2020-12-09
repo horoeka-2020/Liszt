@@ -27,15 +27,17 @@ class MusicLibrary extends React.Component {
     return (
       <div>
         {this.state.musics.map((music) => {
+          console.log('music from render', music)
           return (
             <MusicCard
               title={music.title}
               image={music.imageUrl}
-              musicApiId={music.musicApiId}
+              musicApiId={music.songApiId}
               refreshList={this.refreshList}
-              key={music.musicApiId}
+              key={music.songApiId}
               artist={music.artist}
               album={music.album}
+              id={music.songApiId}
             />
           )
         })}

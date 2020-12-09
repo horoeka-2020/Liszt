@@ -9,14 +9,14 @@ export const getMusicList = (user) => {
 }
 
 export const postMusicToList = (newMusic) => {
-  console.log(newMusic)
+  console.log('newMusic from client api', newMusic)
   const hardCodedUserId = 1
-  const { image, musicApiId, title, artist, album } = newMusic
+  const { image, id, title, artist, album } = newMusic
   const musicDetails = {
     userId: hardCodedUserId,
     imageUrl: image,
     artist: artist,
-    songApiId: musicApiId,
+    songApiId: id,
     album: album,
     title: title
   }
@@ -30,6 +30,7 @@ export const postMusicToList = (newMusic) => {
 
 export const delMusicFromList = (musicApiId) => {
   console.log(musicApiId)
+  console.log('musicApiId what format is this?', musicApiId)
   const hardCodedUserId = 1
   const musicDetails = {
     userId: hardCodedUserId,
@@ -37,7 +38,7 @@ export const delMusicFromList = (musicApiId) => {
     musicApiId: musicApiId.musicApiId
   }
   return request
-    .delete()
+    .delete('/api/v1/music/')
     .send(musicDetails)
     .then((res) => {
       console.log('delMusicFromList > res', res)
